@@ -49,7 +49,7 @@ public class RegisterActivity extends BaseActivity {
         name = findViewById(R.id.name);
         register = findViewById(R.id.register);
         try {
-            s = RsaCoder.encryptByPublicKey(pwd1);
+            s = RsaCoder.encryptByPublicKey("d123456");
         } catch (Exception e) {
             e.printStackTrace();
         }
