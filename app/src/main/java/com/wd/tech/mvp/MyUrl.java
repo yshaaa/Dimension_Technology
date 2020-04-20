@@ -14,5 +14,7 @@ public interface MyUrl {
 
     String BASE_DL="techApi/user/v1/login";
 
+    String BASE_ZC="techApi/user/v1/register";
+
 
 }
