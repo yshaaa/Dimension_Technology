@@ -36,6 +36,9 @@ public class MainActivity extends BaseActivity {
     Button button;
     DrawerLayout layout;
     private String s;
+    //123123123
+    //123123123
+    //3123123123
 
     @Override
     protected void startCoding() {
