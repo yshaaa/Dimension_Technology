@@ -48,16 +48,17 @@ public class RegisterActivity extends BaseActivity {
         pwd = findViewById(R.id.pwd);
         name = findViewById(R.id.name);
         register = findViewById(R.id.register);
-        try {
-            s = RsaCoder.encryptByPublicKey("d123456");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 phone1 = phone.getText().toString().trim();
                 pwd1 = pwd.getText().toString().trim();
+                try {
+                    s = RsaCoder.encryptByPublicKey(pwd1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 name1 = name.getText().toString().trim();
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("phone",phone1);
@@ -81,6 +82,7 @@ public class RegisterActivity extends BaseActivity {
             status = ((ZCBean) o).getStatus();
             if(status.equals("0000")){
                 Toast.makeText(this, "0000", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
     }

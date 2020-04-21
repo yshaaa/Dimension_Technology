@@ -17,4 +17,16 @@ public interface MyUrl {
     String BASE_ZC="techApi/user/v1/register";
 
 
+
+
+
+
+
+
+
+
+    //社区
+    String sheqvliebiao="techApi/community/v1/findCommunityList";
+
+
 }

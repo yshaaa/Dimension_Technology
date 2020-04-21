@@ -20,6 +20,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/pwd"
         android:hint="请输入密码"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="点击注册"
+        android:layout_height="wrap_content"
+        android:id="@+id/register"
+        >
+
+
+    </TextView>
+    <CheckBox
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/login_jizhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_160"
+        android:text="记住密码" />
 
     <Button
         android:layout_width="match_parent"
@@ -29,6 +45,8 @@
         android:textSize="33dp"
         android:background="#00BFFF"
         android:id="@+id/login"/>
+
+
 
 
 
