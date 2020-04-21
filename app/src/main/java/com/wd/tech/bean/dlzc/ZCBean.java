@@ -1,4 +1,4 @@
-package com.wd.tech.bean;
+package com.wd.tech.bean.dlzc;
 
 /**
  * 功能：ZCBean类

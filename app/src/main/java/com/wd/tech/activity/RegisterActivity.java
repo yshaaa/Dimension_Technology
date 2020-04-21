@@ -1,15 +1,12 @@
 package com.wd.tech.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.wd.tech.R;
-import com.wd.tech.bean.ZCBean;
+import com.wd.tech.bean.dlzc.ZCBean;
 import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseActivity;
 import com.wd.tech.mvp.base.BasePresenter;

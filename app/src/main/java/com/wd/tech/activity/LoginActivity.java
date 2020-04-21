@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.wd.tech.MainActivity;
 import com.wd.tech.R;
-import com.wd.tech.bean.DlBean;
+import com.wd.tech.bean.dlzc.DlBean;
 import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseActivity;
 import com.wd.tech.mvp.base.BasePresenter;

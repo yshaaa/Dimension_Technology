@@ -1,4 +1,4 @@
-package com.wd.tech.adapter;
+package com.wd.tech.adapter.shequ;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.tech.R;
 import com.wd.tech.bean.sheqv.SheqvLiebiaoBean;
-import com.wd.tech.mvp.glide.GlideUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
