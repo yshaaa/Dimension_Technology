@@ -44,6 +44,12 @@ public class MainActivity extends BaseActivity {
     protected void startCoding() {
 
 
+
+
+
+        
+        //邓先超111
+
         textView.setText("11111");
         tx.setImageResource(R.drawable.tbicon);
         tx.setOnLongClickListener(new View.OnLongClickListener() {
