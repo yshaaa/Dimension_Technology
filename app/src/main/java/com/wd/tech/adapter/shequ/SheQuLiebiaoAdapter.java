@@ -69,29 +69,27 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
         holder.zan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(whetherGreat==1){
-                    //关注就是红心
-                    holder.zan.setImageResource(R.mipmap.zan_h);
 
-                }else if(whetherGreat==2){
-                    //没关注就是白心
-                    holder.zan.setImageResource(R.mipmap.zan_b);
-                }
+
                 if(whetherGreat==1){
                     if(isDianzan==true){
                         holder.zan.setImageResource(R.mipmap.zan_b);
 
+                        isDianzan=false;
                     } else{
                         //再次点击时，请求关注接口
                         holder.zan.setImageResource(R.mipmap.zan_h);
+
                     }
                 }else if(whetherGreat==2){
                     //如果==2，那就请求关注接口
                     if(isDianzan==true){
                         holder.zan.setImageResource(R.mipmap.zan_h);
+                        isDianzan=false;
                     }else{
                         //再次点击取消关注
                         holder.zan.setImageResource(R.mipmap.zan_b);
+
                     }
                 }
 
@@ -141,8 +139,14 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
             pinglun=itemView.findViewById(R.id.pinglun);
             zan=itemView.findViewById(R.id.zan);
 
+            if(whetherGreat==1){
+                //关注就是红心
+                zan.setImageResource(R.mipmap.zan_h);
 
-
+            }else if(whetherGreat==2){
+                //没关注就是白心
+                zan.setImageResource(R.mipmap.zan_b);
+            }
 
 
 
