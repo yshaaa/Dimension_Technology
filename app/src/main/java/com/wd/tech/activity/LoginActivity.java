@@ -91,6 +91,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
                 Log.e("tag",s);
 
                 Toast.makeText(this, s, Toast.LENGTH_SHORT).show();

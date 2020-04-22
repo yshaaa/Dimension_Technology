@@ -1,6 +1,7 @@
 package com.wd.tech.fragment;
 
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -8,6 +9,8 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.tech.R;
 import com.wd.tech.adapter.shequ.SheQuLiebiaoAdapter;
 import com.wd.tech.bean.sheqv.SheqvLiebiaoBean;
+import com.wd.tech.bean.sheqv.SheqvdianzanBean;
+import com.wd.tech.bean.sheqv.SheqvqvxiaodianzanBean;
 import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseFragment;
 import com.wd.tech.mvp.base.BasePresenter;
@@ -22,6 +25,9 @@ public class SheQu extends BaseFragment {
     private  ArrayList<SheqvLiebiaoBean.ResultBean> list = new ArrayList<>();
     private XRecyclerView xrecy_sheqv;
     private SheQuLiebiaoAdapter adapter;
+    private int whetherGreat;
+    private boolean isDianzan=true;
+    private int id;
 
     @Override
     protected void startCoding() {
@@ -33,6 +39,66 @@ public class SheQu extends BaseFragment {
         map.put("count",5);
         mPresenter.startgetInofHava(MyUrl.sheqvliebiao,SheqvLiebiaoBean.class,map);
 
+
+
+        adapter.setItemClick(new SheQuLiebiaoAdapter.ItemClick() {
+            @Override
+            public void setClick(int p) {
+                whetherGreat = list.get(p).getWhetherGreat();
+                id = list.get(p).getId();
+                //如果==1，那就取消关注
+                if(whetherGreat==1){
+                    if(isDianzan==true){
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("cinemaId", id);
+                        mPresenter.startdeleteInfoHava(MyUrl.sheqvqvxiaodianzan, SheqvqvxiaodianzanBean.class,map);
+                        isDianzan=false;
+                        Toast.makeText(getContext(), "取消关注", Toast.LENGTH_SHORT).show();
+
+                    } else{
+                        //再次点击时，请求关注接口
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("cinemaId", id);
+                        mPresenter.startpostInfoHava(MyUrl.sheqvdianzan,SheqvdianzanBean.class,map);
+                        isDianzan=true;
+                        Toast.makeText(getContext(), "关注成功", Toast.LENGTH_SHORT).show();
+                    }
+                }else if(whetherGreat==2){
+                    //如果==2，那就请求关注接口
+                    if(isDianzan==true){
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("cinemaId", id);
+                        mPresenter.startpostInfoHava(MyUrl.sheqvdianzan,SheqvdianzanBean.class,map);
+                        Toast.makeText(getContext(), "关注成功", Toast.LENGTH_SHORT).show();
+                        isDianzan=false;
+                    }else{
+                        //再次点击取消关注
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("cinemaId", id);
+                        mPresenter.startdeleteInfoHava(MyUrl.sheqvqvxiaodianzan, SheqvqvxiaodianzanBean.class,map);
+                        isDianzan=true;
+                        Toast.makeText(getContext(), "取消关注", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
+
+            }
+        });
+        //评论的点击事件
+        adapter.setPinglun(new SheQuLiebiaoAdapter.Pinglun() {
+            @Override
+            public void setClick(int p) {
+                Toast.makeText(getContext(), "2222", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //图片的点击事件
+        adapter.setTupian(new SheQuLiebiaoAdapter.Tupian() {
+            @Override
+            public void setClick(int p) {
+                Toast.makeText(getContext(), "3333", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

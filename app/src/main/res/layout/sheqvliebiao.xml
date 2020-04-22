@@ -54,6 +54,16 @@
     <ImageView
         android:layout_width="@dimen/dp_16"
         android:layout_height="@dimen/dp_16"
+        android:src="@drawable/xx1"
+        android:layout_below="@id/sheqv_file"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_60"
+        android:layout_toLeftOf="@id/zan"
+        android:id="@+id/pinglun"
+        />
+    <ImageView
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
         android:src="@mipmap/zan_b"
         android:layout_below="@id/sheqv_file"
         android:layout_alignParentRight="true"

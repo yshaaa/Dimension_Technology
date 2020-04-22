@@ -36,32 +36,13 @@ public class MainActivity extends BaseActivity {
     Button button;
     DrawerLayout layout;
     private String s;
-    //123123123
-    //123123123
-    //3123123123
-    //123123
+
 
     @Override
     protected void startCoding() {
 
 
-
-
-
-        
-        //邓先超111
-
         textView.setText("11111");
-
-
-
-
-
-
-
-
-
-
 
         try {
             s = RsaCoder.encryptByPublicKey("d123456");

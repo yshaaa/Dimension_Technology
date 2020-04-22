@@ -41,6 +41,7 @@ public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
                 .placeholder(R.drawable.notnet)
                 .into(holder.imageView);
 
+
         holder.name.setText(list.get(position).getTitle());
         holder.summry.setText(list.get(position).getSummary());
 

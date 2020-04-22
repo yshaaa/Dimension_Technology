@@ -27,8 +27,10 @@ public interface MyUrl {
 
     //社区
     String sheqvliebiao="techApi/community/v1/findCommunityList";
-
-
+    //社区点赞
+    String sheqvdianzan="techApi/community/verify/v1/addCommunityGreat";
+    //社区取消点赞
+    String sheqvqvxiaodianzan="techApi/community/verify/v1/cancelCommunityGreat";
 
     //轮播
     String BASE_ZiXun_LunBo="techApi/information/v1/bannerShow";
