@@ -1,5 +1,6 @@
 package com.wd.tech.adapter;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -48,15 +49,15 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
         holder.sheqv_nickName.setText(list.get(position).getNickName());
         holder.sheqv_content.setText(list.get(position).getContent());
 
-//        if(list.get(position).getHeadPic()==null){
-//
-//        }else{
-//            Glide.with(activity).load(list.get(position).getHeadPic()).into(holder.sheqv_headPic);
-//        }
+
+      //  Glide.with(activity).load(list.get(position).getHeadPic()).into(holder.sheqv_headPic);
 
         Glide.with(activity).load(list.get(position).getFile()).into(holder.sheqv_file);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time = simpleDateFormat.format(list.get(position).getPublishTime());
+        Log.e("time",time);
         holder.sheqv_publishTime.setText(simpleDateFormat.format(list.get(position).getPublishTime())+"");
+
 
     }
 
