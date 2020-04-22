@@ -52,15 +52,8 @@ public class MainActivity extends BaseActivity {
         //邓先超111
 
         textView.setText("11111");
-        tx.setImageResource(R.drawable.tbicon);
-        tx.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(MainActivity.this, "1231231", Toast.LENGTH_SHORT).show();
-                return false;
 
-            }
-        });
+
 
 
 
@@ -137,7 +130,6 @@ public class MainActivity extends BaseActivity {
 
         radioGroup=findViewById(R.id.rg1);
         textView=findViewById(R.id.celaname);
-        tx=findViewById(R.id.ima);
 
     }
 

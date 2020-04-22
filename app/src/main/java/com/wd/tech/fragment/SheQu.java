@@ -1,14 +1,12 @@
 package com.wd.tech.fragment;
 
-import android.content.Context;
-import android.os.Bundle;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wd.tech.R;
-import com.wd.tech.adapter.SheQuLiebiaoAdapter;
+import com.wd.tech.adapter.shequ.SheQuLiebiaoAdapter;
 import com.wd.tech.bean.sheqv.SheqvLiebiaoBean;
 import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseFragment;

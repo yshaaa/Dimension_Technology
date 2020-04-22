@@ -29,4 +29,11 @@ public interface MyUrl {
     String sheqvliebiao="techApi/community/v1/findCommunityList";
 
 
+
+    //轮播
+    String BASE_ZiXun_LunBo="techApi/information/v1/bannerShow";
+
+
+    //资讯列表
+    String BASE_Zixun_recyc="techApi/information/v1/infoRecommendList";
 }
