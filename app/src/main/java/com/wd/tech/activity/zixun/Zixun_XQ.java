@@ -14,5 +14,6 @@ public class Zixun_XQ extends AppCompatActivity {
         setContentView(R.layout.activity_zixun__x_q);
         //123
         //123
+        //123
     }
 }
