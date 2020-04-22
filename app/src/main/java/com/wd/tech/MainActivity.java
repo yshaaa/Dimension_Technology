@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity {
     FragmentManager manager;
     RadioGroup radioGroup;
     Fragment fragment;
-    TextView textView;
+    TextView textView,righttextView;
     ImageView tx;
     Button button;
     DrawerLayout layout;
@@ -52,6 +52,14 @@ public class MainActivity extends BaseActivity {
         //邓先超111
 
         textView.setText("11111");
+
+        righttextView.setText("22222");
+        righttextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "2222", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 
@@ -126,7 +134,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-
+        righttextView=findViewById(R.id.selct_fenlei);
 
         radioGroup=findViewById(R.id.rg1);
         textView=findViewById(R.id.celaname);
@@ -150,6 +158,11 @@ public class MainActivity extends BaseActivity {
     public void left(View v){
         layout.openDrawer(Gravity.LEFT);
         layout.closeDrawer(Gravity.LEFT);/*重点，自动关闭侧边栏*/
+    }
+
+    public void right(View v){
+        layout.openDrawer(Gravity.RIGHT);
+        layout.closeDrawer(Gravity.RIGHT);/*重点，自动关闭侧边栏*/
     }
     public void name(View view) {
         Toast.makeText(this, "123", Toast.LENGTH_SHORT).show();

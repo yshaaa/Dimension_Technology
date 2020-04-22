@@ -286,4 +286,24 @@
 
 
 
+    <LinearLayout
+        android:clickable="true"
+        android:id="@+id/ll_right"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_33"
+            android:id="@+id/selct_fenlei"
+            android:text="选择你的新区分类"/>
+
+
+    </LinearLayout>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

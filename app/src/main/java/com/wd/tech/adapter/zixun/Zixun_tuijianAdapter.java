@@ -18,11 +18,11 @@ import com.wd.tech.bean.zixun.ZixunBean;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
+public class Zixun_tuijianAdapter extends RecyclerView.Adapter<Zixun_tuijianAdapter.Holder> {
     List<ZixunBean.ResultBean> list;
     Context context;
 
-    public ZixunAdapter(List<ZixunBean.ResultBean> list, Context context) {
+    public Zixun_tuijianAdapter(List<ZixunBean.ResultBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -30,7 +30,7 @@ public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_zixun, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_zixun_tuijian, null);
         return new Holder(view);
     }
 

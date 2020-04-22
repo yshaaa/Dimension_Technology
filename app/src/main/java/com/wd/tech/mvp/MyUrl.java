@@ -20,11 +20,6 @@ public interface MyUrl {
 
 
 
-
-
-
-
-
     //社区
     String sheqvliebiao="techApi/community/v1/findCommunityList";
 
@@ -35,5 +30,8 @@ public interface MyUrl {
 
 
     //资讯列表
-    String BASE_Zixun_recyc="techApi/information/v1/infoRecommendList";
+    String BASE_Zixun="techApi/information/v1/infoRecommendList";
+
+    //资讯详情
+    String BASE_ZixunXQ="techApi/information/v1/findInformationDetails";
 }
