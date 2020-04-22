@@ -1,6 +1,7 @@
 package com.wd.tech.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.wd.tech.R;
+import com.wd.tech.activity.zixun.Zixun_XQ;
 import com.wd.tech.adapter.zixun.ZixunAdapter;
 import com.wd.tech.bean.zixun.BannerBean;
 import com.wd.tech.bean.zixun.ZixunBean;
@@ -45,10 +47,10 @@ public class ZiXun extends BaseFragment {
 
 
         HashMap<String,Object> map=new HashMap<>();
-        map.put("plateId",54);
+        map.put("plateId",1);
         map.put("page",1);
-        map.put("count",15);
-        mPresenter.startgetInofHava(MyUrl.BASE_ZiXun_LunBo, ZixunBean.class,map);
+        map.put("count",11);
+        mPresenter.startgetInofHava(MyUrl.BASE_Zixun, ZixunBean.class,map);
 
     }
 
@@ -98,6 +100,19 @@ public class ZiXun extends BaseFragment {
         if(o instanceof ZixunBean){
             zixunAdapter = new ZixunAdapter(((ZixunBean) o).getResult(), getActivity());
             zixun_recyc.setAdapter(zixunAdapter);
+            zixunAdapter.setZixunCallBack(new ZixunAdapter.ZixunCallBack() {
+                @Override
+                public void onClick(int position) {
+                    int id = ((ZixunBean) o).getResult().get(position).getId();
+                    String s = String.valueOf(id);
+                    Intent intent = new Intent(getActivity(), Zixun_XQ.class);
+                    intent.putExtra("id",s);
+                    Log.e("aaa","id"+s+"///"+id);
+                    startActivity(intent);
+                }
+            });
+
+
         }
     }
 

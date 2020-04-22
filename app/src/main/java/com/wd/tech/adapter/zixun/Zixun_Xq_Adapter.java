@@ -14,15 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.wd.tech.R;
 import com.wd.tech.bean.zixun.ZixunBean;
+import com.wd.tech.bean.zixun.Zixun_XQBean;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
-    List<ZixunBean.ResultBean> list;
+public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Holder> {
+    List<Zixun_XQBean.ResultBean> list;
     Context context;
 
-    public ZixunAdapter(List<ZixunBean.ResultBean> list, Context context) {
+    public Zixun_Xq_Adapter(List<Zixun_XQBean.ResultBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -30,7 +31,7 @@ public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_zixun, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_zixun_xq, null);
         return new Holder(view);
     }
 
@@ -41,23 +42,19 @@ public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
                 .placeholder(R.drawable.notnet)
                 .into(holder.imageView);
 
-
+        Log.e("aaa","xq_ima"+list.get(position).getThumbnail());
         holder.name.setText(list.get(position).getTitle());
-        holder.summry.setText(list.get(position).getSummary());
 
-        Log.e("aaa","详细文章"+list.get(position).getSummary());
-        Log.e("aaa","头像"+list.get(position).getThumbnail());
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String format = simpleDateFormat.format(list.get(position).getReleaseTime());
         holder.time.setText(format+"");
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                zixunCallBack.onClick(position);
-            }
-        });
+        holder.itb.setText(list.get(position).getSource());
+
+        holder.content.setText(list.get(position).getComment()+"");
+
+
+
     }
 
     @Override
@@ -66,28 +63,29 @@ public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
     }
 
     class Holder extends RecyclerView.ViewHolder{
-        TextView name,summry,time;
+        TextView name,time,itb,content;
         ImageView imageView;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
-            name=itemView.findViewById(R.id.zixun_name);
-            summry=itemView.findViewById(R.id.zixun_summary);
-            time=itemView.findViewById(R.id.zixun_time);
-            imageView=itemView.findViewById(R.id.zixun_ima);
+            name=itemView.findViewById(R.id.zixun_xq_name);
+            time=itemView.findViewById(R.id.zixun_xq_time);
+            itb=itemView.findViewById(R.id.zixun_xq_itb);
+            content=itemView.findViewById(R.id.zixun_xq_content);
+            imageView=itemView.findViewById(R.id.zixun_xq_ima);
         }
     }
 
 
-    public interface ZixunCallBack{
-        void onClick(int position);
-    }
-
-    public ZixunCallBack zixunCallBack;
-
-    public void setZixunCallBack(ZixunCallBack zixunCallBack){
-        this.zixunCallBack=zixunCallBack;
-    }
+//    public interface ZixunCallBack{
+//        void onClick(int position);
+//    }
+//
+//    public ZixunCallBack zixunCallBack;
+//
+//    public void setZixunCallBack(ZixunCallBack zixunCallBack){
+//        this.zixunCallBack=zixunCallBack;
+//    }
 
 
 }
