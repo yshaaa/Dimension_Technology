@@ -1,8 +1,6 @@
 package com.wd.tech.fragment;
 
-import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.wd.tech.R;
-import com.wd.tech.fragment.xiaoxi.LianxirenFragment;
+import com.wd.tech.fragment.xiaoxi.LinkManFragment;
 import com.wd.tech.fragment.xiaoxi.XiaoXiLiebiaoFragment;
 import com.wd.tech.mvp.base.BaseFragment;
 import com.wd.tech.mvp.base.BasePresenter;
@@ -44,7 +42,7 @@ public class XiaoXi extends BaseFragment {
         list.add("消息");
         list.add("联系人");
         flsit.add(new XiaoXiLiebiaoFragment());
-        flsit.add(new LianxirenFragment());
+        flsit.add(new LinkManFragment());
 
         vp.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @NonNull

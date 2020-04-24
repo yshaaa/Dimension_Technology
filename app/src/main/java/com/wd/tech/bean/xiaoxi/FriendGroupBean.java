@@ -2,13 +2,7 @@ package com.wd.tech.bean.xiaoxi;
 
 import java.util.List;
 
-/**
- * 功能：FenzuBean类
- * 作者：闫圣豪
- * 当前日期：2020/4/24
- * 当前时间：15:51
- */
-public class FenzuBean {
+public class FriendGroupBean {
 
 
     /**
@@ -59,6 +53,16 @@ public class FenzuBean {
         private int customize;
         private int groupId;
         private String groupName;
+
+        public boolean isClosed() {
+            return isClosed;
+        }
+
+        public void setClosed(boolean closed) {
+            isClosed = closed;
+        }
+
+        private boolean isClosed;
 
         public int getBlack() {
             return black;

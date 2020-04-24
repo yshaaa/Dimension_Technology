@@ -2,13 +2,7 @@ package com.wd.tech.bean.xiaoxi;
 
 import java.util.List;
 
-/**
- * 功能：FenzuHaoyouBean类
- * 作者：闫圣豪
- * 当前日期：2020/4/24
- * 当前时间：15:54
- */
-public class FenzuHaoyouBean {
+public class FriendListBean {
 
 
     /**

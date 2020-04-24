@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragment.xiaoxi.LianxirenFragment">
+    android:orientation="vertical" android:gravity="center"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_marginTop="@dimen/dp_10"
@@ -24,11 +22,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/style"
-            android:id="@+id/search_haoyou"
+            android:id="@+id/query"
             android:hint="搜索好友/群"
             />
     </LinearLayout>
-
 
     <RelativeLayout
         android:layout_marginTop="@dimen/dp_10"
@@ -56,6 +53,7 @@
 
     </RelativeLayout>
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40">
@@ -81,26 +79,13 @@
 
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recy_fenzu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
 
 
-    </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recy_haoyou"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-
-
-
-
-
-
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_height="match_parent"
+        android:id="@+id/linkManRc"/>
 </LinearLayout>
