@@ -38,6 +38,7 @@ public class LianxirenFragment extends BaseFragment implements View.OnClickListe
         fenzuAdapter = new FenzuAdapter(list_one,getActivity());
         recy_fenzu.setAdapter(fenzuAdapter);
         mPresenter.startgetInfo(MyUrl.xiaoxifenzu,FenzuBean.class);
+
         fenzuAdapter.setItemClick(new FenzuAdapter.ItemClick() {
             @Override
             public void setClick(int p) {

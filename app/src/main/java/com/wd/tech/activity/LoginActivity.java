@@ -7,13 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.wd.tech.MainActivity;
 import com.wd.tech.R;
 import com.wd.tech.bean.dlzc.DlBean;
 import com.wd.tech.mvp.MyUrl;
+import com.wd.tech.mvp.app.MyApp;
 import com.wd.tech.mvp.base.BaseActivity;
 import com.wd.tech.mvp.base.BasePresenter;
 import com.wd.tech.mvp.presenter.PresenterImpl;
@@ -35,6 +38,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private TextView register;
     private CheckBox mLoginJizhu;
     private SharedPreferences.Editor edit;
+    private ImageView weixin;
 
     @Override
     protected void startCoding() {
@@ -48,6 +52,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void initView() {
+        weixin = findViewById(R.id.weixin);
+        weixin.setOnClickListener(this);
         phone = findViewById(R.id.phone);
         pwd = findViewById(R.id.pwd);
         login = findViewById(R.id.login);
@@ -109,6 +115,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                     edit.putBoolean("checkpwd", true);
                     edit.commit();
                 }
+                break;
+            case R.id.weixin:
+                if (!MyApp.mWxApi.isWXAppInstalled()) {
+                    return;
+                }
+
+                final SendAuth.Req req = new SendAuth.Req();
+                req.scope = "snsapi_userinfo";
+                req.state = "diandi_wx_login";
+                MyApp.mWxApi.sendReq(req);
+
                 break;
         }
     }

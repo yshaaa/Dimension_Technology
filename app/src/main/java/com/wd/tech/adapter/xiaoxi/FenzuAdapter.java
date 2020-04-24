@@ -25,7 +25,7 @@ import java.util.ArrayList;
  */
 public class FenzuAdapter extends RecyclerView.Adapter<FenzuAdapter.Holder> {
 
-    private ArrayList<FenzuHaoyouBean.ResultBean> list_two = new ArrayList<>();
+  //  private ArrayList<FenzuHaoyouBean.ResultBean> list_two = new ArrayList<>();
     private final ArrayList<FenzuBean.ResultBean> list_one;
     private final FragmentActivity activity;
 
@@ -67,12 +67,12 @@ public class FenzuAdapter extends RecyclerView.Adapter<FenzuAdapter.Holder> {
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-        private RecyclerView recy_hayou1;
+       // private RecyclerView recy_hayou1;
         private TextView item_name;
         public Holder(@NonNull View itemView) {
             super(itemView);
             item_name=itemView.findViewById(R.id.item_name);
-            recy_hayou1=itemView.findViewById(R.id.recy_haoyou1);
+        //    recy_hayou1=itemView.findViewById(R.id.recy_haoyou1);
         }
     }
 
