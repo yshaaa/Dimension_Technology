@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wd.tech">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".mvp.app.MyApp"
         android:allowBackup="true"
@@ -12,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.zixun.Zixun_XQ"></activity>
+        <activity android:name=".activity.xiaoxi.LianxiRensearchActivity"></activity>
+        <activity android:name=".activity.xiaoxi.XiaoxisearchActivity" />
+        <activity android:name=".activity.shequ.FabuTieziActivity" />
+        <activity android:name=".activity.zixun.Zixun_XQ" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
@@ -24,5 +25,7 @@
         <activity android:name=".fragment.Left_Activity" />
         <activity android:name=".MainActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

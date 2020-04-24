@@ -125,7 +125,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             DlBean.ResultBean result = ((DlBean) o).getResult();
             sharedPreferences.edit().putString("userId", result.getUserId() + "").commit();
             sharedPreferences.edit().putString("sessionId", result.getSessionId() + "").commit();
-            Toast.makeText(this, "0000", Toast.LENGTH_SHORT).show();
             if(((DlBean) o).getStatus().equals("0000")){
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
