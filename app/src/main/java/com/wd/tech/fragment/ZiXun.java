@@ -2,9 +2,9 @@ package com.wd.tech.fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,10 +14,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.wd.tech.R;
+import com.wd.tech.activity.zixun.Zixun_Mohu;
 import com.wd.tech.activity.zixun.Zixun_XQ;
 import com.wd.tech.adapter.zixun.ZixunAdapter;
 import com.wd.tech.bean.zixun.BannerBean;
 import com.wd.tech.bean.zixun.ZixunBean;
+import com.wd.tech.bean.zixun.Zixun_MohuBean;
 import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseFragment;
 import com.wd.tech.mvp.base.BasePresenter;
@@ -39,18 +41,38 @@ public class ZiXun extends BaseFragment {
     private ArrayList<ZixunBean.ResultBean> listzixun=new ArrayList<>();
     private ZixunAdapter zixunAdapter;
 
+    private EditText editText_mohu;
+    private ImageView imageView_sousuo;
+    private String edit_mohu;
+
 
     @Override
     protected void startCoding() {
         mPresenter.startgetInfo(MyUrl.BASE_ZiXun_LunBo, BannerBean.class);
-
+        
 
 
         HashMap<String,Object> map=new HashMap<>();
         map.put("plateId",1);
         map.put("page",1);
-        map.put("count",11);
+        map.put("count",20);
         mPresenter.startgetInofHava(MyUrl.BASE_Zixun, ZixunBean.class,map);
+
+
+        imageView_sousuo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edit_mohu = editText_mohu.getText().toString().trim();
+
+
+                HashMap<String,Object> map1=new HashMap<>();
+                map1.put("title", edit_mohu);
+                map1.put("page",1);
+                map1.put("count",20);
+                mPresenter.startgetInofHava(MyUrl.BASE_Zixun_Mohu,Zixun_MohuBean.class,map1);
+            }
+        });
+
 
     }
 
@@ -61,6 +83,11 @@ public class ZiXun extends BaseFragment {
 
     @Override
     protected void initView(View view) {
+
+        editText_mohu=view.findViewById(R.id.zixun_mohu_edit);
+        imageView_sousuo=view.findViewById(R.id.zixun_mohu_sousuo);
+
+
         banner=view.findViewById(R.id.banner);
 
         zixun_recyc=view.findViewById(R.id.ZiXun_recyc);
@@ -114,6 +141,25 @@ public class ZiXun extends BaseFragment {
 
 
         }
+
+
+        if(o instanceof Zixun_MohuBean){
+
+//            Zixun_Mohu_Adapter zixun_mohu_adapter = new Zixun_Mohu_Adapter(((Zixun_MohuBean) o).getResult(), getActivity());
+//
+//            zixun_mohu_adapter.setZixunCallBack(new Zixun_Mohu_Adapter.ZixunCallBack() {
+//                @Override
+//                public void onClick(int position) {
+                    Intent intent = new Intent(getActivity(), Zixun_Mohu.class);
+                    intent.putExtra("edit_mohu",edit_mohu);
+                    startActivity(intent);
+//                }
+//            });
+
+
+
+        }
+
     }
 
     @Override

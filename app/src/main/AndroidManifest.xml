@@ -3,18 +3,27 @@
     package="com.wd.tech">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
         android:name=".mvp.app.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/tbicon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.zixun.Zixun_XQ"></activity>
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe"></activity>
+        <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
+        <activity android:name=".activity.zixun.Zixun_Mohu" />
+        <activity android:name=".activity.zixun.Zixun_Right_liebiao" />
+        <activity android:name=".activity.zixun.Zixun_XQ" />
+        <activity android:name=".activity.dlzc.RegisterActivity" />
+        <activity android:name=".activity.dlzc.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

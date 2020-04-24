@@ -34,6 +34,85 @@ public interface MyUrl {
     //资讯列表
     String BASE_Zixun="techApi/information/v1/infoRecommendList";
 
+
+
+
+
+
+
+
+
+
     //资讯详情
     String BASE_ZixunXQ="techApi/information/v1/findInformationDetails";
+
+    String BASE_Zixun_Bankuai="techApi/information/v1/findAllInfoPlate";
+
+    //模糊查询
+    String BASE_Zixun_Mohu="techApi/information/v1/findInformationByTitle";
+
+    //模糊查询作者
+    String BASE_Zixun_Zuozhe="techApi/information/v1/findInformationBySource";
+
+    //资讯评论列表
+    String BASE_Zixun_Plliebiao="techApi/information/v1/findAllInfoCommentList";
+
+
+    //资讯评论
+    String BASE_Zixun_Pl="techApi/information/verify/v1/addInfoComment";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //闫圣豪.................................................
+
 }

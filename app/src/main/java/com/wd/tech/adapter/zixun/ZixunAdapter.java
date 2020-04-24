@@ -45,8 +45,6 @@ public class ZixunAdapter extends RecyclerView.Adapter<ZixunAdapter.Holder> {
         holder.name.setText(list.get(position).getTitle());
         holder.summry.setText(list.get(position).getSummary());
 
-        Log.e("aaa","详细文章"+list.get(position).getSummary());
-        Log.e("aaa","头像"+list.get(position).getThumbnail());
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String format = simpleDateFormat.format(list.get(position).getReleaseTime());

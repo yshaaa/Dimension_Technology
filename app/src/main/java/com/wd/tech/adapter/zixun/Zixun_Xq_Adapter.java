@@ -16,6 +16,9 @@ import com.wd.tech.R;
 import com.wd.tech.bean.zixun.ZixunBean;
 import com.wd.tech.bean.zixun.Zixun_XQBean;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -42,7 +45,6 @@ public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Hold
                 .placeholder(R.drawable.notnet)
                 .into(holder.imageView);
 
-        Log.e("aaa","xq_ima"+list.get(position).getThumbnail());
         holder.name.setText(list.get(position).getTitle());
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -51,7 +53,11 @@ public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Hold
 
         holder.itb.setText(list.get(position).getSource());
 
-        holder.content.setText(list.get(position).getComment()+"");
+
+        Document document = Jsoup.parseBodyFragment(list.get(position).getContent());
+        String text = document.text();
+
+        holder.content.setText(text);
 
 
 

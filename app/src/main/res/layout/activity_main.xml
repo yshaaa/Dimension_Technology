@@ -91,6 +91,7 @@
         android:id="@+id/ll_left"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#fff"
         android:layout_gravity="left"
         android:orientation="vertical">
 
@@ -107,6 +108,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textSize="33dp"
+                android:textStyle="bold"
+                android:textColor="#fff"
                 android:id="@+id/celaname"
                 android:onClick="name"
                 android:text="12312312"/>
@@ -116,7 +119,7 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,7 +142,7 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,7 +166,7 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -186,7 +189,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -210,7 +213,7 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -234,7 +237,7 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -257,7 +260,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_18"
             android:layout_marginLeft="@dimen/dp_36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -298,9 +301,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/dp_33"
+            android:textSize="@dimen/dp_25"
             android:id="@+id/selct_fenlei"
-            android:text="选择你的新区分类"/>
+            android:textColor="#000000"
+            android:text="选择新区分类"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyc_zixun_right"/>
 
 
     </LinearLayout>

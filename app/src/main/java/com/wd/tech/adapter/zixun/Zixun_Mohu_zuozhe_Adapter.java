@@ -1,7 +1,6 @@
 package com.wd.tech.adapter.zixun;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,18 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.wd.tech.R;
-import com.wd.tech.bean.zixun.ZixunBean;
+import com.wd.tech.bean.zixun.Zixun_MohuBean;
+import com.wd.tech.bean.zixun.Zixun_mohu_zuozheBean;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class Zixun_tuijianAdapter extends RecyclerView.Adapter<Zixun_tuijianAdapter.Holder> {
-    List<ZixunBean.ResultBean> list;
+public class Zixun_Mohu_zuozhe_Adapter extends RecyclerView.Adapter<Zixun_Mohu_zuozhe_Adapter.Holder> {
+    List<Zixun_mohu_zuozheBean.ResultBean> list;
     Context context;
 
-    public Zixun_tuijianAdapter(List<ZixunBean.ResultBean> list, Context context) {
+    public Zixun_Mohu_zuozhe_Adapter(List<Zixun_mohu_zuozheBean.ResultBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -30,19 +29,17 @@ public class Zixun_tuijianAdapter extends RecyclerView.Adapter<Zixun_tuijianAdap
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_zixun_tuijian, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_zixun_mohu, null);
         return new Holder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Glide.with(context).load(list.get(position).getThumbnail())
-                .error(R.drawable.notnet)
-                .placeholder(R.drawable.notnet)
-                .into(holder.imageView);
+
 
         holder.name.setText(list.get(position).getTitle());
-        holder.summry.setText(list.get(position).getSummary());
+        holder.summry.setText(list.get(position).getSource());
+
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String format = simpleDateFormat.format(list.get(position).getReleaseTime());
@@ -68,9 +65,8 @@ public class Zixun_tuijianAdapter extends RecyclerView.Adapter<Zixun_tuijianAdap
         public Holder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.zixun_name);
-            summry=itemView.findViewById(R.id.zixun_summary);
+            summry=itemView.findViewById(R.id.zixun_itb);
             time=itemView.findViewById(R.id.zixun_time);
-            imageView=itemView.findViewById(R.id.zixun_ima);
         }
     }
 

@@ -1,4 +1,4 @@
-package com.wd.tech.activity;
+package com.wd.tech.activity.dlzc;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -123,11 +123,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     public void onSuccess(Object o) {
         if(o instanceof DlBean){
             DlBean.ResultBean result = ((DlBean) o).getResult();
+            String nickName = ((DlBean) o).getResult().getNickName();
             sharedPreferences.edit().putString("userId", result.getUserId() + "").commit();
             sharedPreferences.edit().putString("sessionId", result.getSessionId() + "").commit();
             Toast.makeText(this, "0000", Toast.LENGTH_SHORT).show();
             if(((DlBean) o).getStatus().equals("0000")){
                 Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("nickName",nickName);
                 startActivity(intent);
                 finish();
             }

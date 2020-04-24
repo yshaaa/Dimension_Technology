@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@mipmap/bitmap"
-    tools:context=".activity.LoginActivity">
+    tools:context=".activity.dlzc.LoginActivity">
 
 
 

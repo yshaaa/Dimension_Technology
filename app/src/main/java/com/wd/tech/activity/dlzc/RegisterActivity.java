@@ -1,8 +1,9 @@
-package com.wd.tech.activity;
+package com.wd.tech.activity.dlzc;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wd.tech.R;
@@ -28,10 +29,16 @@ public class RegisterActivity extends BaseActivity {
     private String s;
     private String status;
     private String a;
+    TextView ca_lo;
 
     @Override
     protected void startCoding() {
-
+        ca_lo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -41,6 +48,7 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        ca_lo=findViewById(R.id.ca_lo);
         phone = findViewById(R.id.phone);
         pwd = findViewById(R.id.pwd);
         name = findViewById(R.id.name);
@@ -78,8 +86,10 @@ public class RegisterActivity extends BaseActivity {
         if(o instanceof ZCBean){
             status = ((ZCBean) o).getStatus();
             if(status.equals("0000")){
-                Toast.makeText(this, "0000", Toast.LENGTH_SHORT).show();
-                finish();
+                Toast.makeText(this, ((ZCBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, ((ZCBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+
             }
         }
     }

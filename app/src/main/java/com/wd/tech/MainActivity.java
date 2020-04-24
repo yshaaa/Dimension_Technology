@@ -3,29 +3,29 @@ package com.wd.tech;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RadioGroup;
-import android.widget.SlidingDrawer;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wd.tech.activity.zixun.Zixun_Right_liebiao;
+import com.wd.tech.adapter.zixun.Zixun_Bankuai_Adapter;
+import com.wd.tech.bean.zixun.ZiXun_BankuaiBean;
 import com.wd.tech.fragment.SheQu;
 import com.wd.tech.fragment.XiaoXi;
 import com.wd.tech.fragment.ZiXun;
+import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseActivity;
 import com.wd.tech.mvp.base.BasePresenter;
 import com.wd.tech.mvp.presenter.PresenterImpl;
-import com.wd.tech.rsa.RsaCoder;
-
-import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     FragmentManager manager;
@@ -41,19 +41,21 @@ public class MainActivity extends BaseActivity {
     //3123123123
     //123123
 
+    RecyclerView recyclerView;
+
     @Override
     protected void startCoding() {
 
+        String nickName = getIntent().getStringExtra("nickName");
 
 
-
-
-        
         //邓先超111
 
-        textView.setText("11111");
+        textView.setText(nickName);
 
-        righttextView.setText("22222");
+
+
+
         righttextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,18 +66,8 @@ public class MainActivity extends BaseActivity {
 
 
 
+        mPresenter.startgetInfo(MyUrl.BASE_Zixun_Bankuai, ZiXun_BankuaiBean.class);
 
-
-
-
-
-
-
-        try {
-            s = RsaCoder.encryptByPublicKey("d123456");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
         Log.e("aaa",""+s);
@@ -134,6 +126,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
 
+        recyclerView=findViewById(R.id.recyc_zixun_right);
+        GridLayoutManager manager=new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(manager);
+
         righttextView=findViewById(R.id.selct_fenlei);
 
         radioGroup=findViewById(R.id.rg1);
@@ -148,13 +144,31 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onSuccess(Object o) {
+        if(o instanceof ZiXun_BankuaiBean){
+            Zixun_Bankuai_Adapter zixun_bankuai_adapter = new Zixun_Bankuai_Adapter(((ZiXun_BankuaiBean) o).getResult(), MainActivity.this);
+            recyclerView.setAdapter(zixun_bankuai_adapter);
 
+            zixun_bankuai_adapter.setBankuaiCallBack(new Zixun_Bankuai_Adapter.BankuaiCallBack() {
+                @Override
+                public void onClick(int position) {
+                    int id = ((ZiXun_BankuaiBean) o).getResult().get(position).getId();
+                    String s = String.valueOf(id);
+                    Intent intent = new Intent(MainActivity.this, Zixun_Right_liebiao.class);
+                    intent.putExtra("s",s);
+                    startActivity(intent);
+                }
+            });
+
+        }
     }
 
     @Override
     public void onError(String error) {
 
     }
+
+
+
     public void left(View v){
         layout.openDrawer(Gravity.LEFT);
         layout.closeDrawer(Gravity.LEFT);/*重点，自动关闭侧边栏*/

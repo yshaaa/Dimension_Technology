@@ -7,21 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".activity.zixun.Zixun_XQ">
 
-
-    <androidx.recyclerview.widget.RecyclerView
+    
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recyc_zixun_xq"/>
+        android:layout_height="0dp"
+        android:layout_weight="9">
 
-    <TextView
-        android:layout_marginLeft="@dimen/dp_25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="推荐"/>
-    <androidx.recyclerview.widget.RecyclerView
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyc_zixun_xq"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_30"
+                android:text="推荐"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyc_Xq_tuijian"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="评论"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyc_Zixun_pl_liebiao"/>
+
+        </LinearLayout>
+        
+    </ScrollView>
+
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recyc_Xq_tuijian"/>
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:hint="请输入评论类容"
+            android:layout_height="wrap_content"
+            android:id="@+id/zixun_pl_edit"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/zixun_pl_btn"
+            android:text="发送"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content">
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 
 
