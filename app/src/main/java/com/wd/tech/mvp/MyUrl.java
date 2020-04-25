@@ -74,28 +74,32 @@ public interface MyUrl {
 
     //资讯评论
     String BASE_Zixun_Pl="techApi/information/verify/v1/addInfoComment";
+    //我的收藏
+    String BASE_Shoucang="techApi/user/verify/v1/findAllInfoCollection";
+    //我的通知
+    String BASE_Tongzhi="techApi/tool/verify/v1/findSysNoticeList";
+    //我的帖子
+    String BASE_Tiezi="techApi/community/verify/v1/findUserPostById";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //闫圣豪去130+去写.................................................
     //闫圣豪去130+去写.................................................
     //闫圣豪去130+去写.................................................
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
