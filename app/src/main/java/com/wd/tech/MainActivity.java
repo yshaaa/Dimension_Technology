@@ -48,6 +48,7 @@ public class MainActivity extends BaseActivity {
 
         String nickName = getIntent().getStringExtra("nickName");
 
+        Log.e("aaa","用户名字:"+nickName);
 
         //邓先超111
 

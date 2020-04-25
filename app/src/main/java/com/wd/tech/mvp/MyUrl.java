@@ -26,6 +26,20 @@ public interface MyUrl {
     String sheqvdianzan="techApi/community/verify/v1/addCommunityGreat";
     //社区取消点赞
     String sheqvqvxiaodianzan="techApi/community/verify/v1/cancelCommunityGreat";
+    //社区发布帖子
+    String sheqvfabutiezi="techApi/community/verify/v1/releasePost";
+
+
+
+
+
+    //消息
+    //消息分组
+    String xiaoxifenzu="techApi/chat/verify/v1/findFriendGroupList";
+    //消息分组好友
+    String fenzuhaoyou="techApi/chat/verify/v1/findFriendListByGroupId";
+
+
 
     //轮播
     String BASE_ZiXun_LunBo="techApi/information/v1/bannerShow";

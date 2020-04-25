@@ -57,7 +57,8 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
         holder.sheqv_nickName.setText(list.get(position).getNickName());
         holder.sheqv_content.setText(list.get(position).getContent());
 
-
+        holder.name.setText(list.get(position).getNickName());
+        holder.content.setText(list.get(position).getContent());
         Glide.with(activity).load(list.get(position).getHeadPic()+"").into(holder.sheqv_headPic);
 
         Glide.with(activity).load(list.get(position).getFile()).into(holder.sheqv_file);
@@ -79,6 +80,7 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
                     } else{
                         //再次点击时，请求关注接口
                         holder.zan.setImageResource(R.mipmap.zan_h);
+                        isDianzan=true;
 
                     }
                 }else if(whetherGreat==2){
@@ -89,7 +91,7 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
                     }else{
                         //再次点击取消关注
                         holder.zan.setImageResource(R.mipmap.zan_b);
-
+                        isDianzan=true;
                     }
                 }
 
@@ -128,7 +130,7 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
     public class Holder extends RecyclerView.ViewHolder {
         private ImageView sheqv_headPic,sheqv_file,pinglun;
         public ImageView zan;
-        private TextView sheqv_nickName,sheqv_publishTime,sheqv_content;
+        private TextView sheqv_nickName,sheqv_publishTime,sheqv_content,name,content;
         public Holder(@NonNull View itemView) {
             super(itemView);
             sheqv_headPic=itemView.findViewById(R.id.sheqv_headPic);
@@ -138,6 +140,8 @@ public class SheQuLiebiaoAdapter extends XRecyclerView.Adapter<SheQuLiebiaoAdapt
             sheqv_file=itemView.findViewById(R.id.sheqv_file);
             pinglun=itemView.findViewById(R.id.pinglun);
             zan=itemView.findViewById(R.id.zan);
+            name=itemView.findViewById(R.id.name);
+            content=itemView.findViewById(R.id.content);
 
             if(whetherGreat==1){
                 //关注就是红心

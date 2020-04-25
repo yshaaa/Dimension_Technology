@@ -134,6 +134,7 @@
                     android:layout_width="@dimen/dp_30"
                     android:layout_height="@dimen/dp_30"
                     android:src="@mipmap/wx"
+                    android:id="@+id/weixin"
                     >
                 </ImageView>
                 <ImageView
