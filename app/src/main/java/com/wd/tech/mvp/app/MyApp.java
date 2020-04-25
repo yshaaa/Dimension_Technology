@@ -17,7 +17,7 @@ import com.wd.tech.CrashHandler;
  */
 
 public class MyApp extends Application {
-
+    public static IWXAPI mWxApi;
     public static Context context;
 
     @Override
@@ -25,12 +25,36 @@ public class MyApp extends Application {
         super.onCreate();
         context=this;
 
+
         //腾讯Bugly
         CrashReport.initCrashReport(getApplicationContext(), "c9cb604460", false);
 
         //异常类的注册
         CrashHandler.getInstance().init(this);
+
+
+
+        registToWX();
+    }
+    private void registToWX() {
+        //AppConst.WEIXIN.APP_ID是指你应用在微信开放平台上的AppID，记得替换。
+        mWxApi = WXAPIFactory.createWXAPI(this, "wx4c96b6b8da494224", false);
+        // 将该app注册到微信
+        mWxApi.registerApp("wx4c96b6b8da494224");
+
     }
 
+
+
+
+
+
+
+
+
+
+
+
+    //闫圣豪.................
 
 }
