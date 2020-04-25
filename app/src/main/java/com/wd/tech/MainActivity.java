@@ -41,6 +41,8 @@ public class MainActivity extends BaseActivity {
     //3123123123
     //123123
 
+    TextView textView_Shoucang,textView_guanzhu,textView_tiezi,textView_tongzhi,textView_jifen,textView_renwu,textView_shezhi;
+
     RecyclerView recyclerView;
 
     @Override
@@ -117,6 +119,11 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+
+
+
+
     }
 
     @Override
@@ -126,6 +133,15 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        textView_Shoucang=findViewById(R.id.zixun_shoucang);
+        textView_guanzhu=findViewById(R.id.zixun_guanzhu);
+        textView_tiezi=findViewById(R.id.zixun_tiezi);
+        textView_tongzhi=findViewById(R.id.zixun_tongzhi);
+        textView_renwu=findViewById(R.id.zixun_renwu);
+        textView_jifen=findViewById(R.id.zixun_jifen);
+        textView_shezhi=findViewById(R.id.zixun_shezhi);
+
 
         recyclerView=findViewById(R.id.recyc_zixun_right);
         GridLayoutManager manager=new GridLayoutManager(this,2);
