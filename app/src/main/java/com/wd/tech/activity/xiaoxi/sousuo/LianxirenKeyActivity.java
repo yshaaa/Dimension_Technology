@@ -1,16 +1,13 @@
-package com.wd.tech.activity.xiaoxi;
+package com.wd.tech.activity.xiaoxi.sousuo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import com.wd.tech.R;
-
-public class LianxiRensearchActivity extends AppCompatActivity {
+public class LianxirenKeyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lianxi_rensearch);
+        setContentView(R.layout.activity_lianxiren_key);
     }
 }

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.xiaoxi.LianxiRensearchActivity">
+    tools:context=".activity.xiaoxi.XinPengyouActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
