@@ -80,7 +80,8 @@ public interface MyUrl {
     String BASE_Tongzhi="techApi/tool/verify/v1/findSysNoticeList";
     //我的帖子
     String BASE_Tiezi="techApi/community/verify/v1/findUserPostById";
-
+    //我的积分明细
+    String BASe_Jifen_Mx="techApi/user/verify/v1/findUserIntegralRecord";
 
 
 
