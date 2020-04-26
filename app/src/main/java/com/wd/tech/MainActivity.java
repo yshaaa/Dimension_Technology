@@ -12,10 +12,18 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wd.tech.activity.zixun.My_Guanzhu;
+import com.wd.tech.activity.zixun.My_Jifen;
+import com.wd.tech.activity.zixun.My_Renwu;
+import com.wd.tech.activity.zixun.My_Shezhi;
+import com.wd.tech.activity.zixun.My_Shoucang;
+import com.wd.tech.activity.zixun.My_Tiezi;
+import com.wd.tech.activity.zixun.My_Tongzhi;
 import com.wd.tech.activity.zixun.Zixun_Right_liebiao;
 import com.wd.tech.adapter.zixun.Zixun_Bankuai_Adapter;
 import com.wd.tech.bean.zixun.ZiXun_BankuaiBean;
@@ -40,6 +48,10 @@ public class MainActivity extends BaseActivity {
     //123123123
     //3123123123
     //123123
+
+    TextView textView_Shoucang,textView_guanzhu,textView_tiezi,textView_tongzhi,textView_jifen,textView_renwu,textView_shezhi;
+
+    LinearLayout linner;
 
     RecyclerView recyclerView;
 
@@ -117,6 +129,68 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+
+
+        textView_Shoucang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Shoucang.class);
+                startActivity(intent);
+            }
+        });
+
+        textView_guanzhu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Guanzhu.class);
+                startActivity(intent);
+            }
+        });
+
+        textView_tiezi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Tiezi.class);
+                startActivity(intent);
+            }
+        });
+
+        textView_tongzhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Tongzhi.class);
+                startActivity(intent);
+            }
+        });
+
+        textView_renwu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Renwu.class);
+                startActivity(intent);
+            }
+        });
+
+        textView_jifen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Jifen.class);
+                startActivity(intent);
+            }
+        });
+
+        textView_shezhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, My_Shezhi.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
     @Override
@@ -126,6 +200,17 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        linner=findViewById(R.id.linner);
+
+        textView_Shoucang=findViewById(R.id.zixun_shoucang);
+        textView_guanzhu=findViewById(R.id.zixun_guanzhu);
+        textView_tiezi=findViewById(R.id.zixun_tiezi);
+        textView_tongzhi=findViewById(R.id.zixun_tongzhi);
+        textView_renwu=findViewById(R.id.zixun_renwu);
+        textView_jifen=findViewById(R.id.zixun_jifen);
+        textView_shezhi=findViewById(R.id.zixun_shezhi);
+
 
         recyclerView=findViewById(R.id.recyc_zixun_right);
         GridLayoutManager manager=new GridLayoutManager(this,2);
