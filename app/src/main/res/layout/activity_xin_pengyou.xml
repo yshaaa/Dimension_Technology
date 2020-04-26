@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activity.xiaoxi.XinPengyouActivity">
+    <ImageView
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:src="@mipmap/fanhui"
+        android:id="@+id/fanhui_xinpengyou"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_marginLeft="@dimen/dp_130"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@id/fanhui_xinpengyou"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知"
+            android:textSize="@dimen/dp_14"
+            />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/fanhui_xinpengyou"
+        android:id="@+id/recy_xinpengyou"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

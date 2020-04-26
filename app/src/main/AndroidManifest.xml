@@ -8,14 +8,32 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission
-        android:name="android.permission.READ_LOGS"
+    <uses-permission android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+
+
+<!--      闫圣豪20-30行-->
+
+
+
+
+
+
+
+
+
+    <!--      闫圣豪20-30行-->
+
+
+
+
+
+
 
     <application
         android:name=".mvp.app.MyApp"
@@ -25,13 +43,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.zixun.My_Shezhi"></activity>
-        <activity android:name=".activity.zixun.My_Renwu" />
-        <activity android:name=".activity.zixun.My_Jifen" />
-        <activity android:name=".activity.zixun.My_Tongzhi" />
-        <activity android:name=".activity.zixun.My_Tiezi" />
-        <activity android:name=".activity.zixun.My_Guanzhu" />
-        <activity android:name=".activity.zixun.My_Shoucang" />
+
+
+
+
+        <!--      闫圣豪50-60行-->
 
 
 
@@ -41,9 +57,9 @@
 
 
 
-        <!-- 闫圣豪50-60行 -->
-        <!-- 闫圣豪50-60行 -->
-        <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe" />
+        <!--      闫圣豪50-60行-->
+
+        <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe"></activity>
         <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
         <activity android:name=".activity.zixun.Zixun_Mohu" />
         <activity android:name=".activity.zixun.Zixun_Right_liebiao" />
@@ -58,15 +74,16 @@
         </activity>
         <activity
             android:name=".wxapi.WXEntryActivity"
-            android:exported="true" />
-        <activity android:name=".activity.xiaoxi.LianxiRensearchActivity" />
+            android:exported="true"></activity>
+        <activity android:name=".activity.xiaoxi.LianxiRensearchActivity"></activity>
         <activity android:name=".activity.xiaoxi.XiaoxisearchActivity" />
         <activity android:name=".activity.shequ.FabuTieziActivity" />
-        <activity
-            android:name=".activity.zixun.Zixun_XQ"
+        <activity android:name=".activity.zixun.Zixun_XQ"
             tools:ignore="DuplicateActivity" />
         <activity android:name=".fragment.Left_Activity" />
         <activity android:name=".MainActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

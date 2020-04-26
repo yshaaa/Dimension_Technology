@@ -133,6 +133,10 @@ public interface MyUrl {
 
     //闫圣豪去130+去写.................................................
 
+    //消息搜索好友
+    String xiaoxisousuohaoyou="techApi/chat/verify/v1/searchFriend";
+    //消息新朋友通知
+    String xinpengyou="techApi/chat/verify/v1/findFriendNoticePageList";
 
 
 

@@ -1,12 +1,14 @@
 package com.wd.tech.fragment.xiaoxi;
 
 
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ExpandableListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wd.tech.R;
 
+import com.wd.tech.activity.xiaoxi.XinPengyouActivity;
+import com.wd.tech.activity.xiaoxi.sousuo.LianxirenKeyActivity;
 import com.wd.tech.adapter.xiaoxi.FriendGroupAdapter;
 import com.wd.tech.bean.xiaoxi.FriendGroupBean;
 import com.wd.tech.bean.xiaoxi.FriendListBean;
@@ -27,6 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class LinkManFragment extends BaseFragment{
@@ -39,6 +44,10 @@ public class LinkManFragment extends BaseFragment{
     private FriendGroupAdapter friendGroupAdapter;
     private int position=-1;
     List<FriendGroupBean.ResultBean> group=new ArrayList<>();
+    private TextView xinpengyou;
+    private TextView qunzu;
+
+
     @Override
     protected void startCoding() {
 
@@ -76,6 +85,24 @@ public class LinkManFragment extends BaseFragment{
 
     @Override
     protected void initView(View view) {
+        ButterKnife.bind(this,view);
+        query.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), LianxirenKeyActivity.class);
+                startActivity(intent);
+            }
+        });
+        xinpengyou = view.findViewById(R.id.xinpengyou);
+        xinpengyou.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), XinPengyouActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 
@@ -126,5 +153,7 @@ public class LinkManFragment extends BaseFragment{
     public void onError(String error) {
 
     }
+
+
 }
 
