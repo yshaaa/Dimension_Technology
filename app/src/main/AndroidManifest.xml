@@ -15,6 +15,26 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+<!--      闫圣豪20-30行-->
+
+
+
+
+
+
+
+
+
+    <!--      闫圣豪20-30行-->
+
+
+
+
+
+
+
     <application
         android:name=".mvp.app.MyApp"
         android:allowBackup="true"
@@ -23,6 +43,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+
+
+        <!--      闫圣豪50-60行-->
+
+
+
+
+
+
+
+
+
+        <!--      闫圣豪50-60行-->
+
         <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe"></activity>
         <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
         <activity android:name=".activity.zixun.Zixun_Mohu" />
