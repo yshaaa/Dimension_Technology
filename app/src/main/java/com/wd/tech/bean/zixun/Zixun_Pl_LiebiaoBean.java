@@ -9,7 +9,18 @@ import java.util.List;
 public class Zixun_Pl_LiebiaoBean {
 
     /**
-     * result : [{"commentTime":1587630219000,"content":"6465664","headPic":"http://mobile.bwstudent.com/images/tech/head_pic/2020-04-22/20200422003552.jpg","id":2796,"infoId":1,"nickName":"花花公子","userId":1402},{"commentTime":1587437386000,"content":"不错","headPic":"http://mobile.bwstudent.com/images/tech/default/tech.jpg","id":2792,"infoId":1,"nickName":"袁晨冉","userId":1401},{"commentTime":1587129302000,"content":"加油","headPic":"http://mobile.bwstudent.com/images/tech/head_pic/2020-04-17/20200417204020.png","id":2788,"infoId":1,"nickName":"幻影月缺醉几何","userId":1383},{"commentTime":1580561980000,"content":"非常好","headPic":"http://mobile.bwstudent.com/images/tech/default/tech.jpg","id":2684,"infoId":1,"nickName":"{{nickName}}","userId":1193},{"commentTime":1580561946000,"content":"非常好","headPic":"http://mobile.bwstudent.com/images/tech/default/tech.jpg","id":2683,"infoId":1,"nickName":"{{nickName}}","userId":1193}]
+     * result : [{"commentTime":1587630219000,"content":"6465664"
+     * ,"headPic":"http://mobile.bwstudent.com/images/tech/head_pic/2020-04-22/20200422003552.jpg",
+     * "id":2796,"infoId":1
+     * ,"nickName":"花花公子","userId":1402},{"commentTime":1587437386000,"content":"不错","
+     * headPic":"http://mobile.bwstudent.com/images/tech/default/tech.jpg","id":2792,"
+     * infoId":1,"nickName":"袁晨冉","userId":1401},{"commentTime":1587129302000,"content":"加油
+     * ","headPic":"http://mobile.bwstudent.com/images/tech/head_pic/2020-04-17/20200417204020.png","id
+     * ":2788,"infoId":1,"nickName":"幻影月缺醉几何","userId":1383},{"commentTime":1580561980000,"conten
+     * t":"非常好","headPic":"http://mobile.bwstudent.com/images/tech/default/tech.jpg","id":2684,"info
+     * Id":1,"nickName":"{{nickName}}","userId":1193},{"commentTime":1580561946000,"content":"非常好",
+     * "headPic":"http://mobile.bwstudent.com/images/tech/default/tech.jpg","id":2683,"info
+     * Id":1,"nickName":"{{nickName}}","userId":1193}]
      * message : 查询成功
      * status : 0000
      */

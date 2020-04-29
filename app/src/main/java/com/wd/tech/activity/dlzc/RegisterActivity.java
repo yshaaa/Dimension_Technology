@@ -1,5 +1,6 @@
 package com.wd.tech.activity.dlzc;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -64,6 +65,7 @@ public class RegisterActivity extends BaseActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                Log.e("aaa","注册密码加密"+s);
                 name1 = name.getText().toString().trim();
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("phone",phone1);

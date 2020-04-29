@@ -16,8 +16,10 @@ import com.bumptech.glide.request.RequestOptions;
 import com.wd.tech.R;
 import com.wd.tech.activity.zixun.Zixun_Mohu;
 import com.wd.tech.activity.zixun.Zixun_XQ;
+import com.wd.tech.adapter.zixun.MyAAdapter;
 import com.wd.tech.adapter.zixun.ZixunAdapter;
 import com.wd.tech.bean.zixun.BannerBean;
+import com.wd.tech.bean.zixun.My_Guanggao_Bean;
 import com.wd.tech.bean.zixun.ZixunBean;
 import com.wd.tech.bean.zixun.Zixun_MohuBean;
 import com.wd.tech.mvp.MyUrl;
@@ -35,7 +37,7 @@ public class ZiXun extends BaseFragment {
 
     private Banner banner;
 
-    RecyclerView zixun_recyc;
+    RecyclerView zixun_recyc,recyc_a;
 
     ArrayList<String> list=new ArrayList<>();
     private ArrayList<ZixunBean.ResultBean> listzixun=new ArrayList<>();
@@ -49,8 +51,7 @@ public class ZiXun extends BaseFragment {
     @Override
     protected void startCoding() {
         mPresenter.startgetInfo(MyUrl.BASE_ZiXun_LunBo, BannerBean.class);
-        
-
+        mPresenter.startgetInfo(MyUrl.BASE_a,My_Guanggao_Bean.class);
 
         HashMap<String,Object> map=new HashMap<>();
         map.put("plateId",1);
@@ -70,6 +71,7 @@ public class ZiXun extends BaseFragment {
                 map1.put("page",1);
                 map1.put("count",20);
                 mPresenter.startgetInofHava(MyUrl.BASE_Zixun_Mohu,Zixun_MohuBean.class,map1);
+
             }
         });
 
@@ -94,6 +96,11 @@ public class ZiXun extends BaseFragment {
         LinearLayoutManager manager=new LinearLayoutManager(getActivity());
         manager.setOrientation(RecyclerView.VERTICAL);
         zixun_recyc.setLayoutManager(manager);
+
+        recyc_a=view.findViewById(R.id.recyc_a);
+        LinearLayoutManager manager1=new LinearLayoutManager(getActivity());
+        manager1.setOrientation(RecyclerView.HORIZONTAL);
+        recyc_a.setLayoutManager(manager1);
     }
 
     @Override
@@ -145,6 +152,7 @@ public class ZiXun extends BaseFragment {
 
         if(o instanceof Zixun_MohuBean){
 
+
 //            Zixun_Mohu_Adapter zixun_mohu_adapter = new Zixun_Mohu_Adapter(((Zixun_MohuBean) o).getResult(), getActivity());
 //
 //            zixun_mohu_adapter.setZixunCallBack(new Zixun_Mohu_Adapter.ZixunCallBack() {
@@ -159,6 +167,17 @@ public class ZiXun extends BaseFragment {
 
 
         }
+
+        if(o instanceof My_Guanggao_Bean){
+                List<My_Guanggao_Bean.ResultBean> list=new ArrayList<>();
+                list.add(((My_Guanggao_Bean) o).getResult());
+
+            MyAAdapter myAAdapter = new MyAAdapter(list, getActivity());
+            recyc_a.setAdapter(myAAdapter);
+        }
+
+
+
 
     }
 

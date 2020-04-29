@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wd.tech.R;
@@ -17,6 +19,10 @@ import com.wd.tech.adapter.zixun.ZixunAdapter;
 import com.wd.tech.adapter.zixun.Zixun_Xq_Adapter;
 import com.wd.tech.adapter.zixun.Zixun_pl_LiebiaoAdapter;
 import com.wd.tech.adapter.zixun.Zixun_tuijianAdapter;
+import com.wd.tech.bean.zixun.SC_FBean;
+import com.wd.tech.bean.zixun.ScBean;
+import com.wd.tech.bean.zixun.ZanBean;
+import com.wd.tech.bean.zixun.Zan_f_Bean;
 import com.wd.tech.bean.zixun.ZixunBean;
 import com.wd.tech.bean.zixun.Zixun_PlBean;
 import com.wd.tech.bean.zixun.Zixun_Pl_LiebiaoBean;
@@ -43,6 +49,13 @@ public class Zixun_XQ extends BaseActivity {
     Button button_fs;
     private Zixun_pl_LiebiaoAdapter zixun_pl_liebiaoAdapter;
 
+    ImageView zixun_xq_pl_ima,zixun_xq_zan_ima,zixun_xq_ax_ima,zixun_xq_share_ima;
+    TextView zixun_xq_pl_number,zixun_xq_zan_number,zixun_xq_ax_number,zixun_xq_share_number;
+
+    boolean flag=false;
+    boolean flag2=false;
+    int j=0;
+    private int whetherGreat;
 
     @Override
     protected void startCoding() {
@@ -98,6 +111,98 @@ public class Zixun_XQ extends BaseActivity {
         });
 
 
+
+
+
+
+
+
+
+        //评论,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        zixun_xq_pl_ima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(flag){
+                    zixun_xq_pl_ima.setImageResource(R.drawable.xx1);
+                    flag=false;
+                }else {
+                    zixun_xq_pl_ima.setImageResource(R.drawable.xx2);
+                    flag=true;
+                }
+            }
+        });
+
+
+        //点赞,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        zixun_xq_zan_ima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(whetherGreat==1){
+                    if(flag2){
+                        flag2=false;
+                        HashMap<String,Object> map6=new HashMap<>();
+                        map6.put("infoId",iid);
+                        mPresenter.startpostInfoHava(MyUrl.BASE_Dianzan_false, Zan_f_Bean.class,map6);
+                        zixun_xq_zan_ima.setImageResource(R.drawable.zan_1);
+
+                    }else {
+                        flag2=true;
+                        HashMap<String,Object> map5=new HashMap<>();
+                        map5.put("infoId",iid);
+                        mPresenter.startpostInfoHava(MyUrl.BASE_Dianzan_true, ZanBean.class,map5);
+
+                        zixun_xq_zan_ima.setImageResource(R.drawable.zan_2);
+
+                    }
+                }else if(whetherGreat==2){
+                    if(flag2){
+                        flag2=false;
+                        HashMap<String,Object> map6=new HashMap<>();
+                        map6.put("infoId",iid);
+                        mPresenter.startpostInfoHava(MyUrl.BASE_Dianzan_false, Zan_f_Bean.class,map6);
+                        zixun_xq_zan_ima.setImageResource(R.drawable.zan_1);
+
+                    }else {
+                        flag2=true;
+                        HashMap<String,Object> map5=new HashMap<>();
+                        map5.put("infoId",iid);
+                        mPresenter.startpostInfoHava(MyUrl.BASE_Dianzan_true, ZanBean.class,map5);
+
+                        zixun_xq_zan_ima.setImageResource(R.drawable.zan_2);
+
+                    }
+                }
+
+            }
+        });
+
+
+        //收藏,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        zixun_xq_ax_ima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(flag){
+                    Map<String,Object> map8=new HashMap<>();
+                    map8.put("infoId",iid);
+                    mPresenter.startpostInfoHava(MyUrl.BASE_F_SC, SC_FBean.class,map8);
+                    zixun_xq_ax_ima.setImageResource(R.drawable.ax1);
+                    flag=false;
+                }else {
+                    Map<String,Object> map7=new HashMap<>();
+                    map7.put("infoId",iid);
+                    mPresenter.startpostInfoHava(MyUrl.BASE_SC, ScBean.class,map7);
+                    zixun_xq_ax_ima.setImageResource(R.drawable.ax2);
+                    flag=true;
+                }
+            }
+        });
+
+
+
+        //分享,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+
+
     }
 
     @Override
@@ -107,6 +212,19 @@ public class Zixun_XQ extends BaseActivity {
 
     @Override
     protected void initView() {
+
+        zixun_xq_pl_ima=findViewById(R.id.zixun_xq_pl_ima);
+        zixun_xq_pl_number=findViewById(R.id.zixun_xq_pl_number);
+
+        zixun_xq_zan_ima=findViewById(R.id.zixun_xq_zan_ima);
+        zixun_xq_zan_number=findViewById(R.id.zixun_xq_zan_number);
+
+        zixun_xq_ax_ima=findViewById(R.id.zixun_xq_ax_ima);
+        zixun_xq_ax_number=findViewById(R.id.zixun_xq_ax_number);
+
+        zixun_xq_share_ima=findViewById(R.id.zixun_xq_share_ima);
+        zixun_xq_share_number=findViewById(R.id.zixun_xq_share_number);
+
 
         editText_pl=findViewById(R.id.zixun_pl_edit);
         button_fs=findViewById(R.id.zixun_pl_btn);
@@ -140,6 +258,7 @@ public class Zixun_XQ extends BaseActivity {
             list.add(((Zixun_XQBean) o).getResult());
             share = ((Zixun_XQBean) o).getResult().getShare();
 
+            whetherGreat = ((Zixun_XQBean) o).getResult().getWhetherGreat();
         }
 
 
@@ -164,6 +283,11 @@ public class Zixun_XQ extends BaseActivity {
         if(o instanceof Zixun_Pl_LiebiaoBean){
             zixun_pl_liebiaoAdapter = new Zixun_pl_LiebiaoAdapter(((Zixun_Pl_LiebiaoBean) o).getResult(), Zixun_XQ.this);
             recyclerView3.setAdapter(zixun_pl_liebiaoAdapter);
+
+
+            
+
+            zixun_xq_pl_number.setText((zixun_pl_liebiaoAdapter.sum()+2)+"");
         }
 
         if(o instanceof Zixun_PlBean){
@@ -177,6 +301,46 @@ public class Zixun_XQ extends BaseActivity {
         }
 
 
+        if(o instanceof ZanBean){
+            String status = ((ZanBean) o).getStatus();
+            if(status.equals("0000")){
+                Log.e("aaa","st"+status);
+                Toast.makeText(this, ((ZanBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }else {
+                Log.e("aaa","st"+status);
+                Toast.makeText(this, ((ZanBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }
+
+        if(o instanceof Zan_f_Bean){
+            String status = ((Zan_f_Bean) o).getStatus();
+            if(status.equals("0000")){
+                Toast.makeText(this, ((Zan_f_Bean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, ((Zan_f_Bean) o).getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }
+
+
+        if(o instanceof ScBean){
+            String status = ((ScBean) o).getStatus();
+            if(status.equals("0000")){
+                Toast.makeText(this, ((ScBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, ((ScBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        if(o instanceof SC_FBean){
+            String status = ((SC_FBean) o).getStatus();
+            if(status.equals("0000")){
+                Toast.makeText(this, ((SC_FBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, ((SC_FBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
 
 
     }
