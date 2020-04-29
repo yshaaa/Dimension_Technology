@@ -1,6 +1,7 @@
 package com.wd.tech.fragment.xiaoxi;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -76,6 +77,7 @@ public class LinkManFragment extends BaseFragment{
         });
 
 
+
     }
 
     @Override
@@ -120,7 +122,7 @@ public class LinkManFragment extends BaseFragment{
                 group.clear();
                 List<FriendGroupBean.ResultBean> result = ((FriendGroupBean) o).getResult();
                 group.addAll(result);
-                friendGroupAdapter = new FriendGroupAdapter(group);
+                friendGroupAdapter = new FriendGroupAdapter(getContext(),result);
                 friendGroupAdapter.setOnClickListener(new FriendGroupAdapter.OnClickListener() {
                     @Override
                     public void onClick(int positon, int groupId) {
@@ -147,6 +149,7 @@ public class LinkManFragment extends BaseFragment{
             }
             friendGroupAdapter.notifyDataSetChanged();
         }
+
     }
 
     @Override

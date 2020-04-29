@@ -30,7 +30,6 @@ public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.
     private List<FriendListBean.ResultBean> list;
 
     public FriendChildAdapter(List<FriendListBean.ResultBean> child) {
-
         list = child;
     }
 
@@ -44,9 +43,16 @@ public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         FriendListBean.ResultBean resultBean = list.get(position);
+
         GlideUtil.Loadimage(list.get(position).getHeadPic(),holder.iv);
         holder.name.setText(resultBean.getNickName());
         holder.remark.setText(resultBean.getRemarkName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClick.setClick(resultBean.getNickName());
+            }
+        });
     }
 
     @Override
@@ -67,5 +73,15 @@ public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
+    }
+
+
+
+    public interface ItemClick{
+        void setClick(String p);
+    }
+    private ItemClick itemClick;
+    public void setItemClick(ItemClick itemClick){
+        this.itemClick=itemClick;
     }
 }

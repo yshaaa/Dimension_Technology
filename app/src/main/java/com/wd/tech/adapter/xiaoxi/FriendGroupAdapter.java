@@ -1,17 +1,22 @@
 package com.wd.tech.adapter.xiaoxi;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wd.tech.R;
+import com.wd.tech.activity.xiaoxi.XinPengyouActivity;
+import com.wd.tech.activity.xiaoxi.liaotian.ChatinterfaceActivity;
 import com.wd.tech.bean.xiaoxi.FriendGroupBean;
 import com.wd.tech.bean.xiaoxi.FriendListBean;
 
@@ -22,19 +27,24 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * date:2020/4/22 0022
- * author:胡锦涛(Administrator)
- * function:
- */
+
 public class FriendGroupAdapter extends RecyclerView.Adapter<FriendGroupAdapter.GroupViewHolder> {
 
+
+    private final Context context;
     private List<FriendGroupBean.ResultBean> list=new ArrayList<>();
     List<FriendListBean.ResultBean> child=new ArrayList<>();
-    public FriendGroupAdapter(List<FriendGroupBean.ResultBean> group) {
-        list = group;
-    }
+
     private int pos=-1;
+
+
+
+    public FriendGroupAdapter(Context context, List<FriendGroupBean.ResultBean> result) {
+
+        this.context = context;
+        list = result;
+    }
+
     public void addAllChild(int position, List<FriendListBean.ResultBean> mchild) {
         child=mchild;
         pos=position;
@@ -47,6 +57,7 @@ public class FriendGroupAdapter extends RecyclerView.Adapter<FriendGroupAdapter.
     }
     @Override
     public void onBindViewHolder(@NonNull GroupViewHolder holder, int position) {
+
         FriendGroupBean.ResultBean resultBean = list.get(position);
         int currentNumber = resultBean.getCurrentNumber();
         String groupName = resultBean.getGroupName();
@@ -80,6 +91,19 @@ public class FriendGroupAdapter extends RecyclerView.Adapter<FriendGroupAdapter.
         if (child!=null){
             FriendChildAdapter friendChildAdapter = new FriendChildAdapter(child);
             holder.rc.setAdapter(friendChildAdapter);
+
+            //点击跳转
+            friendChildAdapter.setItemClick(new FriendChildAdapter.ItemClick() {
+                @Override
+                public void setClick(String p) {
+                    Intent intent = new Intent(context, ChatinterfaceActivity.class);
+                    intent.putExtra("name",p);
+                    context.startActivity(intent);
+                }
+            });
+
+
+
         }
 
 }

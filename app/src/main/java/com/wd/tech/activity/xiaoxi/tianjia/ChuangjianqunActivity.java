@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.wd.tech.R;
+
 public class ChuangjianqunActivity extends AppCompatActivity {
 
     @Override

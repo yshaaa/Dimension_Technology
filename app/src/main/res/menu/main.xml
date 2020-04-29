@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
-        android:id="@+id/add"
-        android:title="添加" />
+        android:id="@+id/addhaoyou"
+        android:title="添加好友/群" />
     <item
-        android:id="@+id/remove"
-        android:title="删除" />
-    <item
-        android:id="@+id/share"
-        android:title="分享" />
+        android:id="@+id/qun"
+        android:title="创建群" />
+
 
 
 </menu>
