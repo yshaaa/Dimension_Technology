@@ -98,9 +98,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                     e.printStackTrace();
                 }
 
-                Log.e("tag",s);
-
-                Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("phone", phone1);
                 map.put("pwd", s);
@@ -141,14 +138,24 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         if(o instanceof DlBean){
             DlBean.ResultBean result = ((DlBean) o).getResult();
             String nickName = ((DlBean) o).getResult().getNickName();
+
+            String headPic = ((DlBean) o).getResult().getHeadPic();
+            String phone = ((DlBean) o).getResult().getPhone();
+
             sharedPreferences.edit().putString("userId", result.getUserId() + "").commit();
             sharedPreferences.edit().putString("sessionId", result.getSessionId() + "").commit();
             if(((DlBean) o).getStatus().equals("0000")){
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.putExtra("nickName",nickName);
                 Log.e("aaa","手机名字"+nickName);
+                intent.putExtra("headPic",headPic);
+                intent.putExtra("phone",phone);
                 startActivity(intent);
+                Toast.makeText(this, ((DlBean) o).getMessage(), Toast.LENGTH_SHORT).show();
                 finish();
+            }else {
+                Toast.makeText(this, ((DlBean) o).getMessage(), Toast.LENGTH_SHORT).show();
+
             }
 
         }

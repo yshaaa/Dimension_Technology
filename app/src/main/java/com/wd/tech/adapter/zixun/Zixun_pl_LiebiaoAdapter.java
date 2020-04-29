@@ -54,6 +54,15 @@ public class Zixun_pl_LiebiaoAdapter extends RecyclerView.Adapter<Zixun_pl_Liebi
         holder.time.setText(format+"");
 
 
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                liebiaoCallBack.onClick(position);
+//            }
+//        });
+
+
+
     }
 
     @Override
@@ -74,6 +83,27 @@ public class Zixun_pl_LiebiaoAdapter extends RecyclerView.Adapter<Zixun_pl_Liebi
         }
     }
 
+//    public interface LiebiaoCallBack{
+//        void onClick(int position);
+//    }
+//
+//    public LiebiaoCallBack liebiaoCallBack;
+//
+//    public void setLiebiaoCallBack(LiebiaoCallBack liebiaoCallBack){
+//        this.liebiaoCallBack=liebiaoCallBack;
+//    }
+
+
+    public int sum(){
+        int sum=0;
+
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.get(i).getHeadPic().length(); j++) {
+                sum++;
+            }
+        }
+        return sum;
+    }
 
 
 

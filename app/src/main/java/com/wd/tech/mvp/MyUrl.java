@@ -82,11 +82,18 @@ public interface MyUrl {
     String BASE_Tiezi="techApi/community/verify/v1/findUserPostById";
     //我的积分明细
     String BASe_Jifen_Mx="techApi/user/verify/v1/findUserIntegralRecord";
+    //修改密码
+    String BASE_Xiugai_pwd="techApi/user/verify/v1/modifyUserPwd";
+    //点赞成功
+    String BASE_Dianzan_true="techApi/information/verify/v1/addGreatRecord";
+    //取消点赞
+    String BASE_Dianzan_false="techApi/information/verify/v1/cancelGreat";
+    //收藏
+    String BASE_SC="techApi/user/verify/v1/addCollection";
+    //取消收藏
+    String BASE_F_SC="techApi/user/verify/v1/cancelCollection";
 
-
-
-
-
+    String BASE_a="techApi/information/v1/findInfoAdvertising";
 
 
 

@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.wd.tech.R;
 import com.wd.tech.bean.zixun.My_ShoucangBean;
 import com.wd.tech.bean.zixun.ZixunBean;
@@ -39,6 +41,7 @@ public class My_Shoucang_Adapter extends RecyclerView.Adapter<My_Shoucang_Adapte
         Glide.with(context).load(list.get(position).getThumbnail())
                 .error(R.drawable.notnet)
                 .placeholder(R.drawable.notnet)
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(60)))
                 .into(holder.imageView);
 
 

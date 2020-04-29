@@ -78,6 +78,97 @@
             android:layout_weight="4"
             android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_33">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dp_33"
+                    android:layout_height="@dimen/dp_33">
+
+                    <ImageView
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="@dimen/dp_25"
+                        android:background="@drawable/xx1"
+                        android:id="@+id/zixun_xq_pl_ima"
+                        android:layout_height="@dimen/dp_25"
+                        />
+                    <TextView
+                        android:layout_width="@dimen/dp_10"
+                        android:layout_height="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_22"
+                        android:textColor="#f00"
+                        android:id="@+id/zixun_xq_pl_number"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_33">
+                <ImageView
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="@dimen/dp_25"
+                    android:background="@drawable/zan_1"
+                    android:id="@+id/zixun_xq_zan_ima"
+                    android:layout_height="@dimen/dp_25"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+
+                    android:textColor="#f00"
+                    android:id="@+id/zixun_xq_zan_number"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_33">
+
+                <ImageView
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="@dimen/dp_25"
+                    android:background="@drawable/ax1"
+                    android:id="@+id/zixun_xq_ax_ima"
+                    android:layout_height="@dimen/dp_25"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:textColor="#f00"
+
+                    android:id="@+id/zixun_xq_ax_number"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_33">
+
+                <ImageView
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="@dimen/dp_25"
+                    android:background="@drawable/share"
+                    android:layout_height="@dimen/dp_25"
+                    android:id="@+id/zixun_xq_share_ima"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:textColor="#f00"
+                    android:id="@+id/zixun_xq_share_number"
+
+                    />
+
+            </LinearLayout>
+            
 
 
         </LinearLayout>

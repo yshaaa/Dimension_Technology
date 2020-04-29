@@ -111,5 +111,6 @@ dependencies {
 
 //    闫圣豪155+去写......................
 
+    implementation 'jp.wasabeef:glide-transformations:2.0.0'
 
 }

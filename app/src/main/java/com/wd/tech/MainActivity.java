@@ -54,14 +54,20 @@ public class MainActivity extends BaseActivity {
     LinearLayout linner;
 
     RecyclerView recyclerView;
+    private String headPic;
+    private String phone;
+    private String nickName;
 
     @Override
     protected void startCoding() {
 
-        String nickName = getIntent().getStringExtra("nickName");
+        nickName = getIntent().getStringExtra("nickName");
 
-        Log.e("aaa","用户名字:"+nickName);
+        Log.e("aaa","用户名字:"+ nickName);
 
+        Intent intent = getIntent();
+        headPic = intent.getStringExtra("headPic");
+        phone = intent.getStringExtra("phone");
         //邓先超111
 
         textView.setText(nickName);
@@ -184,6 +190,9 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, My_Shezhi.class);
+                intent.putExtra("headPic",headPic);
+                intent.putExtra("phone",phone);
+                intent.putExtra("nickName",nickName);
                 startActivity(intent);
             }
         });

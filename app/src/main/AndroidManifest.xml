@@ -25,23 +25,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.zixun.My_Shezhi"></activity>
+        <activity android:name=".My_Shezhi_pwd"></activity>
+        <activity android:name=".activity.zixun.My_Shezhi" />
         <activity android:name=".activity.zixun.My_Renwu" />
         <activity android:name=".activity.zixun.My_Jifen" />
         <activity android:name=".activity.zixun.My_Tongzhi" />
         <activity android:name=".activity.zixun.My_Tiezi" />
         <activity android:name=".activity.zixun.My_Guanzhu" />
-        <activity android:name=".activity.zixun.My_Shoucang" />
-
-
-
-
-
-
-
-
-
-        <!-- 闫圣豪50-60行 -->
+        <activity android:name=".activity.zixun.My_Shoucang" /> <!-- 闫圣豪50-60行 -->
         <!-- 闫圣豪50-60行 -->
         <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe" />
         <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
