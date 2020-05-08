@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.zixun.Zixun_xff">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_360"
+        android:background="@drawable/fufei2"
+        android:id="@+id/zixun_xffima"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/zixun_ff_btn"
+        android:textSize="@dimen/dp_25"
+        android:text="付费项目,请付费后阅读"
+        android:background="#5095F6"
+        android:layout_height="@dimen/dp_36"/>
+
+
+
+
+</LinearLayout>

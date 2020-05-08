@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.zixun.Zixun_Fufei">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_33"
+        android:text="选择付费方式"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="让阅读随时随地"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/chengse"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="积分兑换"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="Integral purchase"
+                android:textColor="#fff"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@drawable/myjifen"/>
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="购买说明"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="@dimen/dp_136"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="只需一次性付费即可对该条咨询永久免费阅读"
+                android:textColor="#fff"/>
+
+
+            <TextView
+                android:layout_width="@dimen/dp_136"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_60"
+                android:text="点击兑换>>"
+                android:id="@+id/duihuan_jf"
+                android:textColor="#fff"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/lvse"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="开通会员"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="membership purchase"
+                android:textColor="#fff"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@drawable/vipp"/>
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="购买说明"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="@dimen/dp_136"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:text="会员可以免费阅读所有付费资讯"
+                android:textColor="#fff"/>
+
+
+            <TextView
+                android:layout_width="@dimen/dp_136"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginLeft="@dimen/dp_60"
+                android:text="点击兑换>>"
+                android:id="@+id/duihuan_vip"
+                android:textColor="#fff"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +26,7 @@ import java.util.List;
 public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Holder> {
     List<Zixun_XQBean.ResultBean> list;
     Context context;
+    private int readPower;
 
     public Zixun_Xq_Adapter(List<Zixun_XQBean.ResultBean> list, Context context) {
         this.list = list;
@@ -40,10 +42,6 @@ public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Hold
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Glide.with(context).load(list.get(position).getThumbnail())
-                .error(R.drawable.notnet)
-                .placeholder(R.drawable.notnet)
-                .into(holder.imageView);
 
         holder.name.setText(list.get(position).getTitle());
 
@@ -54,10 +52,26 @@ public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Hold
         holder.itb.setText(list.get(position).getSource());
 
 
-        Document document = Jsoup.parseBodyFragment(list.get(position).getContent());
-        String text = document.text();
+        readPower = list.get(position).getReadPower();
 
-        holder.content.setText(text);
+            Glide.with(context).load(list.get(position).getThumbnail())
+                    .error(R.drawable.notnet)
+                    .placeholder(R.drawable.notnet)
+                    .into(holder.imageView);
+
+
+            Document document = Jsoup.parseBodyFragment(list.get(position).getContent());
+            String text = document.text();
+            holder.content.setText(text);
+
+
+         if(readPower ==2){
+
+            Glide.with(context).load(R.drawable.fufei).into(holder.imageView);
+
+        }
+
+
 
 
 
@@ -70,7 +84,7 @@ public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Hold
 
     class Holder extends RecyclerView.ViewHolder{
         TextView name,time,itb,content;
-        ImageView imageView;
+        ImageView imageView,imageView_ff;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
@@ -79,6 +93,7 @@ public class Zixun_Xq_Adapter extends RecyclerView.Adapter<Zixun_Xq_Adapter.Hold
             itb=itemView.findViewById(R.id.zixun_xq_itb);
             content=itemView.findViewById(R.id.zixun_xq_content);
             imageView=itemView.findViewById(R.id.zixun_xq_ima);
+//            imageView_ff=itemView.findViewById(R.id.zixun_xq_ff_ima_ad);
         }
     }
 

@@ -94,11 +94,16 @@ public interface MyUrl {
     String BASE_F_SC="techApi/user/verify/v1/cancelCollection";
 
     String BASE_a="techApi/information/v1/findInfoAdvertising";
+    //积分兑换
+    String BASE_jf_dh="techApi/information/verify/v1/infoPayByIntegral";
 
+    String BASE_VIP="techApi/tool/v1/findVipCommodityList";
 
+    //购买
+    String BASE_Gm="techApi/tool/verify/v1/buyVip";
 
-
-
+//支付
+    String BASE_Zhifu="techApi/tool/verify/v1/pay";
 
 
 

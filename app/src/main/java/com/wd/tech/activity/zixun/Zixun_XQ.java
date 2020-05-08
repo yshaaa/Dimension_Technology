@@ -1,11 +1,9 @@
 package com.wd.tech.activity.zixun;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wd.tech.R;
-import com.wd.tech.adapter.zixun.ZixunAdapter;
 import com.wd.tech.adapter.zixun.Zixun_Xq_Adapter;
 import com.wd.tech.adapter.zixun.Zixun_pl_LiebiaoAdapter;
 import com.wd.tech.adapter.zixun.Zixun_tuijianAdapter;
@@ -57,9 +54,12 @@ public class Zixun_XQ extends BaseActivity {
     int j=0;
     private int whetherGreat;
 
+    ImageView ffima;
+    private String id;
+
     @Override
     protected void startCoding() {
-        String id = getIntent().getStringExtra("id");
+        id = getIntent().getStringExtra("id");
         iid = Integer.valueOf(id);
 
         Log.e("aaa","id_xq"+iid);
@@ -213,6 +213,8 @@ public class Zixun_XQ extends BaseActivity {
     @Override
     protected void initView() {
 
+        ffima=findViewById(R.id.zixun_xq_fufei_ima);
+
         zixun_xq_pl_ima=findViewById(R.id.zixun_xq_pl_ima);
         zixun_xq_pl_number=findViewById(R.id.zixun_xq_pl_number);
 
@@ -255,10 +257,20 @@ public class Zixun_XQ extends BaseActivity {
     @Override
     public void onSuccess(Object o) {
         if(o instanceof Zixun_XQBean){
-            list.add(((Zixun_XQBean) o).getResult());
-            share = ((Zixun_XQBean) o).getResult().getShare();
+            int readPower = ((Zixun_XQBean) o).getResult().getReadPower();
+            if(readPower==2){
+                Toast.makeText(this, "不可以阅读", Toast.LENGTH_SHORT).show();
+//                Glide.with(this).load(R.drawable.fufei2).into(ffima);
+                Intent intent = new Intent(Zixun_XQ.this, Zixun_xff.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
+            }else if(readPower==1){
+                list.add(((Zixun_XQBean) o).getResult());
+                share = ((Zixun_XQBean) o).getResult().getShare();
 
-            whetherGreat = ((Zixun_XQBean) o).getResult().getWhetherGreat();
+                whetherGreat = ((Zixun_XQBean) o).getResult().getWhetherGreat();
+            }
+
         }
 
 

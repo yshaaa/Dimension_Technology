@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 
 /**
  * date:2020/4/23 0023
- * author:胡锦涛(Administrator)
+ * author:
  * function:
  */
 public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.ViewHolder>{

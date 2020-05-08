@@ -273,6 +273,7 @@ public class MainActivity extends BaseActivity {
         layout.openDrawer(Gravity.RIGHT);
         layout.closeDrawer(Gravity.RIGHT);/*重点，自动关闭侧边栏*/
     }
+
     public void name(View view) {
         Toast.makeText(this, "123", Toast.LENGTH_SHORT).show();
     }

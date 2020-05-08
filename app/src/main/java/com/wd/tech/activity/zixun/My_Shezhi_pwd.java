@@ -1,4 +1,4 @@
-package com.wd.tech;
+package com.wd.tech.activity.zixun;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.wd.tech.R;
 import com.wd.tech.bean.zixun.My_Xiugai_PwdBean;
 import com.wd.tech.bean.zixun.My_jifenBean;
 import com.wd.tech.mvp.MyUrl;
