@@ -55,6 +55,11 @@
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true" />
+        <activity android:name=".activity.xiaoxi.liaotian.ChatinterfaceActivity"></activity>
+        <activity android:name=".activity.xiaoxi.sousuo.LianxirenKeyActivity"/>
+        <activity android:name=".activity.xiaoxi.XinPengyouActivity"/>
+        <activity android:name=".activity.xiaoxi.tianjia.ChuangjianqunActivity"/>
+        <activity android:name=".activity.xiaoxi.tianjia.TianjiahaoyouActivity"/>
         <activity android:name=".activity.xiaoxi.LianxiRensearchActivity" />
         <activity android:name=".activity.xiaoxi.XiaoxisearchActivity" />
         <activity android:name=".activity.shequ.FabuTieziActivity" />
