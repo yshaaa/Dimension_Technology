@@ -2,6 +2,7 @@ package com.wd.tech.wxapi;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,6 +51,7 @@ public class WXEntryActivity extends AppCompatActivity implements IWXAPIEventHan
                         //拿到了微信返回的code,立马再去请求access_token
                         String code = ((SendAuth.Resp) baseResp).code;
                         //就在这个地方，用网络库什么的或者自己封的网络api，发请求去咯，注意是get请求
+                        Log.e("aaa","微信code值:"+code);
                         Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);

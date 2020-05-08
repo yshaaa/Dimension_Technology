@@ -1,15 +1,11 @@
 package com.wd.tech.activity.zixun;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.wd.tech.My_Shezhi_pwd;
 import com.wd.tech.R;
 import com.wd.tech.activity.dlzc.LoginActivity;
 import com.wd.tech.adapter.zixun.My_Jifen_Adapter;
