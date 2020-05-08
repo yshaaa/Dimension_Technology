@@ -5,17 +5,20 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission
         android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="Package.permission.JPUSH_MESSAGE" />
+
+
 
     <application
         android:name=".mvp.app.MyApp"
@@ -25,6 +28,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.xiaoxi.XiaoxisearchActivity"/>
+        <activity android:name=".activity.xiaoxi.tianjia.ChuangjianqunActivity"/>
+        <activity android:name=".activity.xiaoxi.tianjia.TianjiahaoyouActivity"/>
+        <activity android:name=".activity.xiaoxi.liaotian.ChatinterfaceActivity"/>
+        <activity android:name=".activity.xiaoxi.XinPengyouActivity"/>
+        <activity android:name=".activity.xiaoxi.sousuo.LianxirenKeyActivity"/>
+
+
+
+
         <activity android:name=".My_Shezhi_pwd"></activity>
         <activity android:name=".activity.zixun.My_Shezhi" />
         <activity android:name=".activity.zixun.My_Renwu" />
@@ -50,14 +64,32 @@
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true" />
-        <activity android:name=".activity.xiaoxi.LianxiRensearchActivity" />
-        <activity android:name=".activity.xiaoxi.XiaoxisearchActivity" />
+        <activity android:name=".activity.xiaoxi.XiaoxisearchActivity"></activity>
         <activity android:name=".activity.shequ.FabuTieziActivity" />
         <activity
             android:name=".activity.zixun.Zixun_XQ"
             tools:ignore="DuplicateActivity" />
         <activity android:name=".fragment.Left_Activity" />
         <activity android:name=".MainActivity" />
+
+        <receiver
+           android:name=".jiguang.receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="com.wd.tech" />
+            </intent-filter>
+        </receiver>
+        <service
+           android:name=".jiguang.service.MyService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

@@ -68,6 +68,21 @@ public class PresenterImpl extends BasePresenter {
     }
 
     @Override
+    public void startpostInfoHava1(String url, Class cls, Map<String, Object> map) {
+        model.postInfoHava1(url, cls, map, new Contract.ModelCallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+                getView().onError(error);
+            }
+        });
+    }
+
+    @Override
     public void startputInfoHava(String url, Class cls, Map<String, Object> map) {
         model.putInfoHava(url, cls, map, new Contract.ModelCallBack() {
             @Override

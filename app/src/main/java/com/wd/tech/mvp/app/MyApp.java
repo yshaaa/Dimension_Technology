@@ -9,6 +9,9 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.wd.tech.CrashHandler;
 
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.im.android.api.JMessageClient;
+
 /**
  * 功能：ApiService类
  * 作者：闫圣豪
@@ -19,7 +22,7 @@ import com.wd.tech.CrashHandler;
 public class MyApp extends Application {
     public static IWXAPI mWxApi;
     public static Context context;
-
+    public  final static String DOCTOR_APP_KEY = "d4cf77f0d3b85e9edc540dee";
     @Override
     public void onCreate() {
         super.onCreate();
@@ -30,6 +33,11 @@ public class MyApp extends Application {
         registToWX();
         //异常类的注册
         CrashHandler.getInstance().init(this);
+
+        JMessageClient.setDebugMode(true);
+        JMessageClient.init(this);
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
     }
     private void registToWX() {
         //AppConst.WEIXIN.APP_ID是指你应用在微信开放平台上的AppID，记得替换。

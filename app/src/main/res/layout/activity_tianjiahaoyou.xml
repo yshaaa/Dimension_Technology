@@ -3,14 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activity.xiaoxi.tianjia.TianjiahaoyouActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="afafafafa"
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@mipmap/sousuo"
+            android:layout_marginLeft="@dimen/dp_20"
+            />
 
-    </TextView>
+        <EditText
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/style"
+            android:id="@+id/query"
+            android:hint="搜索好友/群"
+            />
+    </LinearLayout>
 
 </LinearLayout>

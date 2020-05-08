@@ -271,6 +271,43 @@ public class NetUtil {
     }
 
 
+    //post有参数
+    public void postInfoHava1(String url,Class cls,Map<String,Object>map,NetCallBack callBack){
+        apiService.postInfoHava1(url, map).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        Gson gson = new Gson();
+                        try {
+                            Object o = gson.fromJson(responseBody.string(), cls);
+                            if (callBack != null) {
+                                callBack.onSuccess(o);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (callBack != null) {
+                            callBack.onError(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
 
 
 

@@ -141,7 +141,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
             String headPic = ((DlBean) o).getResult().getHeadPic();
             String phone = ((DlBean) o).getResult().getPhone();
-
+            String pwd = ((DlBean) o).getResult().getPwd();
+            Log.e("aaa",pwd);
+            String phone2 = ((DlBean) o).getResult().getPhone();
+            Log.e("bbb",phone2);
+            String userName = ((DlBean) o).getResult().getUserName();
+            Log.e("username",userName);
             sharedPreferences.edit().putString("userId", result.getUserId() + "").commit();
             sharedPreferences.edit().putString("sessionId", result.getSessionId() + "").commit();
             if(((DlBean) o).getStatus().equals("0000")){

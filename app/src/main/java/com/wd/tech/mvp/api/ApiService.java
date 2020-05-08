@@ -31,6 +31,9 @@ public interface ApiService {
     @POST//post参数 FormParam 对应的注解@FieldMap
     Observable<ResponseBody>postInfoHava(@Url String url, @FieldMap Map<String, Object> map);
 
+    @POST
+    Observable<ResponseBody>postInfoHava1(@Url String url, @QueryMap Map<String, Object> map);
+
     @PUT
     Observable<ResponseBody>putInfoHava(@Url String url,@QueryMap Map<String,Object>map);
 

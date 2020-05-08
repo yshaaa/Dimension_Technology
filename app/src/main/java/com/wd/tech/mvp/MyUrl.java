@@ -146,6 +146,8 @@ public interface MyUrl {
     //消息新朋友通知
     String xinpengyou="techApi/chat/verify/v1/findFriendNoticePageList";
 
+    String chunagjian="techApi/group/verify/v1/createGroup";
+
 
 
 
