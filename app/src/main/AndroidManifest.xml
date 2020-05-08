@@ -34,9 +34,14 @@
         <activity android:name=".activity.zixun.My_Guanzhu" />
         <activity android:name=".activity.zixun.My_Shoucang" /> <!-- 闫圣豪50-60行 -->
         <!-- 闫圣豪50-60行 -->
+        <activity android:name=".activity.zixun.Duihuan_jf_activity"></activity>
+        <activity android:name=".activity.zixun.Duihuan_Vip_activity"></activity>
+        <activity android:name=".activity.zixun.Zixun_xff"></activity>
+        <activity android:name=".activity.zixun.Zixun_Fufei"></activity>
         <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe" />
         <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
         <activity android:name=".activity.zixun.Zixun_Mohu" />
+
         <activity android:name=".activity.zixun.Zixun_Right_liebiao" />
         <activity android:name=".activity.zixun.Zixun_XQ" />
         <activity android:name=".activity.dlzc.RegisterActivity" />
