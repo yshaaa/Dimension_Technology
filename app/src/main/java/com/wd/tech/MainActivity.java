@@ -17,6 +17,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wd.tech.activity.xiaoxi.XinPengyouActivity;
+import com.wd.tech.activity.zixun.MyDateActivity;
 import com.wd.tech.activity.zixun.My_Guanzhu;
 import com.wd.tech.activity.zixun.My_Jifen;
 import com.wd.tech.activity.zixun.My_Renwu;
@@ -26,6 +28,7 @@ import com.wd.tech.activity.zixun.My_Tiezi;
 import com.wd.tech.activity.zixun.My_Tongzhi;
 import com.wd.tech.activity.zixun.Zixun_Right_liebiao;
 import com.wd.tech.adapter.zixun.Zixun_Bankuai_Adapter;
+import com.wd.tech.bean.zixun.FindSingRecordingBean;
 import com.wd.tech.bean.zixun.ZiXun_BankuaiBean;
 import com.wd.tech.fragment.SheQu;
 import com.wd.tech.fragment.XiaoXi;
@@ -34,6 +37,9 @@ import com.wd.tech.mvp.MyUrl;
 import com.wd.tech.mvp.base.BaseActivity;
 import com.wd.tech.mvp.base.BasePresenter;
 import com.wd.tech.mvp.presenter.PresenterImpl;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
     FragmentManager manager;
@@ -57,6 +63,8 @@ public class MainActivity extends BaseActivity {
     private String headPic;
     private String phone;
     private String nickName;
+    private ImageView qian;
+
 
     @Override
     protected void startCoding() {
@@ -221,15 +229,23 @@ public class MainActivity extends BaseActivity {
         textView_shezhi=findViewById(R.id.zixun_shezhi);
 
 
+
+
         recyclerView=findViewById(R.id.recyc_zixun_right);
-        GridLayoutManager manager=new GridLayoutManager(this,2);
-        recyclerView.setLayoutManager(manager);
+//        GridLayoutManager manager=new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         righttextView=findViewById(R.id.selct_fenlei);
 
         radioGroup=findViewById(R.id.rg1);
         textView=findViewById(R.id.celaname);
-
+        qian = findViewById(R.id.qian);
+        qian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.startgetInfo(MyUrl.FIND_RECORDING, FindSingRecordingBean.class);
+            }
+        });
     }
 
     @Override
@@ -239,6 +255,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onSuccess(Object o) {
+
+        if (o instanceof FindSingRecordingBean){
+            List<String> result = ((FindSingRecordingBean) o).getResult();
+            Intent intent = new Intent(MainActivity.this, MyDateActivity.class);
+            intent.putExtra("tmd",(Serializable) result);
+            startActivity(intent);
+        }
+
         if(o instanceof ZiXun_BankuaiBean){
             Zixun_Bankuai_Adapter zixun_bankuai_adapter = new Zixun_Bankuai_Adapter(((ZiXun_BankuaiBean) o).getResult(), MainActivity.this);
             recyclerView.setAdapter(zixun_bankuai_adapter);
@@ -255,6 +279,10 @@ public class MainActivity extends BaseActivity {
             });
 
         }
+
+
+
+
     }
 
     @Override

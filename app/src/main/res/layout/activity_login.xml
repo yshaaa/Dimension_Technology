@@ -138,6 +138,7 @@
                     >
                 </ImageView>
                 <ImageView
+                    android:id="@+id/renlian"
                     android:layout_marginLeft="@dimen/dp_40"
                     android:layout_width="@dimen/dp_30"
                     android:layout_height="@dimen/dp_30"

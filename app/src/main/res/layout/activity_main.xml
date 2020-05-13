@@ -104,15 +104,27 @@
             android:layout_height="200dp">
 
             <TextView
+                android:id="@+id/celaname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textSize="33dp"
-                android:textStyle="bold"
-                android:textColor="#fff"
-                android:id="@+id/celaname"
+                android:layout_centerHorizontal="true"
                 android:onClick="name"
-                android:text="12312312"/>
+                android:text="12312312"
+                android:textColor="#fff"
+                android:textSize="33dp"
+                android:textStyle="bold" />
+
+
+
+            <ImageView
+                android:id="@+id/qian"
+                android:src="@mipmap/ic_launcher"
+                android:layout_alignParentRight="true"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35">
+
+            </ImageView>
+
 
 
         </RelativeLayout>

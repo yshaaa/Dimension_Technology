@@ -39,6 +39,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private CheckBox mLoginJizhu;
     private SharedPreferences.Editor edit;
     private ImageView weixin;
+    private ImageView renlian;
 
     @Override
     protected void startCoding() {
@@ -52,6 +53,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void initView() {
+        renlian = findViewById(R.id.renlian);
+        renlian.setOnClickListener(this);
         weixin = findViewById(R.id.weixin);
         weixin.setOnClickListener(this);
         phone = findViewById(R.id.phone);
@@ -123,6 +126,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 req.state = "diandi_wx_login";
                 MyApp.mWxApi.sendReq(req);
 
+                break;
+            case R.id.renlian:
+                Intent intent = new Intent(this,RenLianActivity.class);
+                startActivity(intent);
                 break;
         }
     }

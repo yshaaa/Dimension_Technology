@@ -5,4 +5,10 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorB">#FFFFFF</color>
     <color name="colorL">#20affa</color>
+    <color name="gray_normal">#666667</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="blue">#0383EE</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="ren_in">#ff5737</color>
 </resources>

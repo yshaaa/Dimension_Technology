@@ -5,7 +5,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +13,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.wd.tech.MainActivity;
 import com.wd.tech.R;
 import com.wd.tech.activity.xiaoxi.tianjia.ChuangjianqunActivity;
 import com.wd.tech.activity.xiaoxi.tianjia.TianjiahaoyouActivity;
@@ -97,7 +95,7 @@ public class XiaoXi extends BaseFragment {
             public boolean onMenuItemClick(MenuItem item) {
                 CharSequence title = item.getTitle();
                 if(title.equals("添加好友/群")){
-                    Intent intent = new Intent(getContext(),TianjiahaoyouActivity.class);
+                    Intent intent = new Intent(getContext(), TianjiahaoyouActivity.class);
                     startActivity(intent);
                 }else{
                     Intent intent = new Intent(getContext(), ChuangjianqunActivity.class);

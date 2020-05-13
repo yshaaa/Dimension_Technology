@@ -17,6 +17,7 @@ import com.wd.tech.bean.xiaoxi.FriendListBean;
 import com.wd.tech.mvp.app.MyApp;
 import com.wd.tech.mvp.base.BaseActivity;
 import com.wd.tech.mvp.base.BasePresenter;
+import com.wd.tech.mvp.glide.GlideUtil;
 import com.wd.tech.mvp.presenter.PresenterImpl;
 import com.wd.tech.rsa.MD5Utils;
 import com.wd.tech.rsa.RsaCoder;
@@ -38,18 +39,28 @@ public class ChatinterfaceActivity extends BaseActivity {
 
 
     private String name;
+    private String pic;
     private ImageView fanhui;
     private ImageView xinxi;
     private TextView name1;
     private EditText edtext1;
     private TextView text1;
+
     private Conversation mConversation;
+    private TextView xiao;
+    private TextView xiao1;
+    private ImageView im;
+    private ImageView im1;
+    private String trim;
 
     @Override
     protected void startCoding() {
 
+
         name = getIntent().getStringExtra("name");
+        pic = getIntent().getStringExtra("pic");
         name1.setText(name);
+
 
 
     }
@@ -61,6 +72,11 @@ public class ChatinterfaceActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        im = findViewById(R.id.im);
+        im1 = findViewById(R.id.im1);
+        xiao = findViewById(R.id.xiao);
+        xiao1 = findViewById(R.id.xiao1);
+
         fanhui = findViewById(R.id.fanhui);
         xinxi = findViewById(R.id.xinxi);
         name1 = findViewById(R.id.name);
@@ -96,6 +112,7 @@ public class ChatinterfaceActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 String s = edtext1.getText().toString();
+                trim = edtext1.getText().toString().trim();
                 if (!TextUtils.isEmpty(s)) {
                     /**
                      * 1.创建消息对象
@@ -110,6 +127,8 @@ public class ChatinterfaceActivity extends BaseActivity {
                             if (i == 0) {
                                 //发送成功
 
+                                xiao1.setText(trim);
+                                GlideUtil.Loadimage(pic,im1);
 
                             } else {
                                 //发送失败
@@ -153,7 +172,13 @@ public class ChatinterfaceActivity extends BaseActivity {
             @Override
             public void run() {
                 Log.i("TAG", "run: extra:" + extra + "   title:" + title);
+
                 Toast.makeText(ChatinterfaceActivity.this, finalStr1, Toast.LENGTH_SHORT).show();
+                if(finalStr1!=null){
+                    xiao.setText(finalStr1);
+                    GlideUtil.Loadimage(pic,im);
+                }
+
             }
         });
     }

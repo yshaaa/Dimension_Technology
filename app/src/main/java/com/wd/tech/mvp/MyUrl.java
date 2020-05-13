@@ -153,7 +153,21 @@ public interface MyUrl {
 
     String chunagjian="techApi/group/verify/v1/createGroup";
 
+    //根据手机号查找好友(找群)
+    String find_people="techApi/user/verify/v1/findUserByPhone";
+    //查询群组详细信息(找群)
+    String find_group="techApi/group/verify/v1/findGroupInfo";
+    String qunzu="techApi/group/verify/v1/findGroupsByUserId";
 
 
-
+    //做任务
+    String DO_TASK = "techApi/user/verify/v1/doTheTask";
+    //签到
+    String USER_SIGN = "techApi/user/verify/v1/userSign";
+    //当天签到状态
+    String FIND_USER_SIGN = "techApi/user/verify/v1/findUserSignStatus";
+    //查询当月签到日期
+    String FIND_RECORDING = "techApi/user/verify/v1/findUserSignRecording";
+    //查询连续签到日期
+    String SIGN_DAY = "techApi/user/verify/v1/findContinuousSignDays";
 }

@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
  */
 public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.ViewHolder>{
     private List<FriendListBean.ResultBean> list;
+    private String headPic;
 
     public FriendChildAdapter(List<FriendListBean.ResultBean> child) {
         list = child;
@@ -42,6 +43,7 @@ public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        headPic = list.get(position).getHeadPic();
         FriendListBean.ResultBean resultBean = list.get(position);
 
         GlideUtil.Loadimage(list.get(position).getHeadPic(),holder.iv);
@@ -50,7 +52,7 @@ public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemClick.setClick(resultBean.getNickName());
+                itemClick.setClick(resultBean.getNickName(),headPic);
             }
         });
     }
@@ -78,7 +80,7 @@ public class FriendChildAdapter extends RecyclerView.Adapter<FriendChildAdapter.
 
 
     public interface ItemClick{
-        void setClick(String p);
+        void setClick(String p,String headPic);
     }
     private ItemClick itemClick;
     public void setItemClick(ItemClick itemClick){

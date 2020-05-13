@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wd.tech.R;
 
+import com.wd.tech.activity.xiaoxi.GroupActivity;
 import com.wd.tech.activity.xiaoxi.XinPengyouActivity;
 import com.wd.tech.activity.xiaoxi.sousuo.LianxirenKeyActivity;
 import com.wd.tech.adapter.xiaoxi.FriendGroupAdapter;
@@ -40,6 +41,7 @@ public class LinkManFragment extends BaseFragment{
 
     @BindView(R.id.query)
     EditText query;
+
     @BindView(R.id.linkManRc)
     RecyclerView linkManRc;
     private FriendGroupAdapter friendGroupAdapter;
@@ -103,7 +105,14 @@ public class LinkManFragment extends BaseFragment{
                 startActivity(intent);
             }
         });
-
+        qunzu = view.findViewById(R.id.qunzu);
+        this.qunzu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), GroupActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

@@ -58,6 +58,7 @@ public class FriendGroupAdapter extends RecyclerView.Adapter<FriendGroupAdapter.
     @Override
     public void onBindViewHolder(@NonNull GroupViewHolder holder, int position) {
 
+
         FriendGroupBean.ResultBean resultBean = list.get(position);
         int currentNumber = resultBean.getCurrentNumber();
         String groupName = resultBean.getGroupName();
@@ -95,8 +96,9 @@ public class FriendGroupAdapter extends RecyclerView.Adapter<FriendGroupAdapter.
             //点击跳转
             friendChildAdapter.setItemClick(new FriendChildAdapter.ItemClick() {
                 @Override
-                public void setClick(String p) {
+                public void setClick(String p,String pic) {
                     Intent intent = new Intent(context, ChatinterfaceActivity.class);
+                    intent.putExtra("pic",pic);
                     intent.putExtra("name",p);
                     context.startActivity(intent);
                 }

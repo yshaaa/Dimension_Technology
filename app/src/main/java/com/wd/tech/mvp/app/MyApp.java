@@ -3,14 +3,17 @@ package com.wd.tech.mvp.app;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.arclibrary.builder.AcrFaceManagerBuilder;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.wd.tech.CrashHandler;
+import com.wd.tech.renlian.Constants;
 
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.im.android.api.JMessageClient;
+
 
 /**
  * 功能：ApiService类
@@ -27,6 +30,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         context=this;
+        initArcFace();
 
         //腾讯Bugly
         CrashReport.initCrashReport(getApplicationContext(), "c9cb604460", false);
@@ -39,6 +43,18 @@ public class MyApp extends Application {
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
     }
+
+    private void initArcFace() {
+        new AcrFaceManagerBuilder().setContext(this)
+                .setFreeSdkAppId(Constants.FREESDKAPPID)
+                .setFdSdkKey(Constants.FDSDKKEY)
+                .setFtSdkKey(Constants.FTSDKKEY)
+                .setFrSdkKey(Constants.FRSDKKEY)
+                .setLivenessAppId(Constants.LIVENESSAPPID)
+                .setLivenessSdkKey(Constants.LIVENESSSDKKEY)
+                .create();
+    }
+
     private void registToWX() {
         //AppConst.WEIXIN.APP_ID是指你应用在微信开放平台上的AppID，记得替换。
         mWxApi = WXAPIFactory.createWXAPI(this, "wx4c96b6b8da494224", false);

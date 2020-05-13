@@ -3,6 +3,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wd.tech">
 
+    <application
+        android:name=".mvp.app.MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/tbicon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.zixun.MyDate2Activity"></activity>
+        <activity android:name=".activity.dlzc.RenLianActivity" />
+        <activity android:name=".My_Shezhi_pwd" />
+        <activity android:name=".activity.xiaoxi.GroupActivity" />
+        <activity android:name=".activity.xiaoxi.tianjia.TianjiahaoyouActivity" />
+        <activity android:name=".activity.zixun.My_Shezhi" />
+        <activity android:name=".activity.zixun.My_Renwu" />
+        <activity android:name=".activity.zixun.My_Jifen" />
+        <activity android:name=".activity.zixun.My_Tongzhi" />
+        <activity android:name=".activity.zixun.My_Tiezi" />
+        <activity android:name=".activity.zixun.My_Guanzhu" />
+        <activity android:name=".activity.zixun.My_Shoucang" /> <!-- 闫圣豪50-60行 -->
+        <!-- 闫圣豪50-60行 -->
+        <activity android:name=".activity.zixun.Duihuan_jf_activity" />
+        <activity android:name=".activity.zixun.Duihuan_Vip_activity" />
+        <activity android:name=".activity.zixun.Zixun_xff" />
+        <activity android:name=".activity.zixun.Zixun_Fufei" />
+        <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe" />
+        <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
+        <activity android:name=".activity.zixun.Zixun_Mohu" />
+        <activity android:name=".activity.zixun.Zixun_Right_liebiao" />
+        <activity android:name=".activity.zixun.Zixun_XQ" />
+        <activity android:name=".activity.zixun.MyDateActivity" />
+        <activity android:name=".activity.dlzc.RegisterActivity" />
+        <activity android:name=".activity.dlzc.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true" />
+        <activity android:name=".activity.xiaoxi.liaotian.ChatinterfaceActivity" />
+        <activity android:name=".activity.xiaoxi.sousuo.LianxirenKeyActivity" />
+        <activity android:name=".activity.xiaoxi.XinPengyouActivity" />
+        <activity android:name=".activity.xiaoxi.tianjia.ChuangjianqunActivity" />
+        <activity android:name=".activity.xiaoxi.LianxiRensearchActivity" />
+        <activity android:name=".activity.xiaoxi.XiaoxisearchActivity" />
+        <activity android:name=".activity.shequ.FabuTieziActivity" />
+        <activity android:name=".renlian.arc.LivenessActivity" />
+        <activity
+            android:name=".activity.zixun.Zixun_XQ"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".fragment.Left_Activity" />
+        <activity android:name=".MainActivity" />
+
+        <receiver
+            android:name=".jiguang.receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.wd.tech" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".jiguang.service.MyService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+    </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,59 +92,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <application
-        android:name=".mvp.app.MyApp"
-        android:allowBackup="true"
-        android:icon="@drawable/tbicon"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".My_Shezhi_pwd"></activity>
-        <activity android:name=".activity.zixun.My_Shezhi" />
-        <activity android:name=".activity.zixun.My_Renwu" />
-        <activity android:name=".activity.zixun.My_Jifen" />
-        <activity android:name=".activity.zixun.My_Tongzhi" />
-        <activity android:name=".activity.zixun.My_Tiezi" />
-        <activity android:name=".activity.zixun.My_Guanzhu" />
-        <activity android:name=".activity.zixun.My_Shoucang" /> <!-- 闫圣豪50-60行 -->
-        <!-- 闫圣豪50-60行 -->
-        <activity android:name=".activity.zixun.Duihuan_jf_activity"></activity>
-        <activity android:name=".activity.zixun.Duihuan_Vip_activity"></activity>
-        <activity android:name=".activity.zixun.Zixun_xff"></activity>
-        <activity android:name=".activity.zixun.Zixun_Fufei"></activity>
-        <activity android:name=".activity.zixun.Zixun_Mohu_Zuozhe" />
-        <activity android:name=".activity.zixun.Zixun_Mohu_wenzhang" />
-        <activity android:name=".activity.zixun.Zixun_Mohu" />
-
-        <activity android:name=".activity.zixun.Zixun_Right_liebiao" />
-        <activity android:name=".activity.zixun.Zixun_XQ" />
-        <activity android:name=".activity.dlzc.RegisterActivity" />
-        <activity android:name=".activity.dlzc.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:exported="true" />
-        <activity android:name=".activity.xiaoxi.liaotian.ChatinterfaceActivity"></activity>
-        <activity android:name=".activity.xiaoxi.sousuo.LianxirenKeyActivity"/>
-        <activity android:name=".activity.xiaoxi.XinPengyouActivity"/>
-        <activity android:name=".activity.xiaoxi.tianjia.ChuangjianqunActivity"/>
-        <activity android:name=".activity.xiaoxi.tianjia.TianjiahaoyouActivity"/>
-        <activity android:name=".activity.xiaoxi.LianxiRensearchActivity" />
-        <activity android:name=".activity.xiaoxi.XiaoxisearchActivity" />
-        <activity android:name=".activity.shequ.FabuTieziActivity" />
-        <activity
-            android:name=".activity.zixun.Zixun_XQ"
-            tools:ignore="DuplicateActivity" />
-        <activity android:name=".fragment.Left_Activity" />
-        <activity android:name=".MainActivity" />
-    </application>
 
 </manifest>
